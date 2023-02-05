@@ -1,8 +1,8 @@
 
-/**
+/*
  * 订单中心
  *
- * 这个文件实际上只是一个示例。数据模型完全是虚构的。
+ * 设计中
  */
 syntax = "proto3";
 
@@ -15,7 +15,7 @@ package order;
 
 import "base.proto";
 
-/**
+/*
  * 商品中心
  */
 service order {
@@ -31,7 +31,7 @@ service order {
   rpc AppReset (base.IdReq) returns (AppResetResp) {}
 }
 
-/**
+/*
  * APP详情
  */
 message AppItem {
@@ -45,7 +45,7 @@ message AppItem {
   string updated_at = 8; // 更新时间
 }
 
-/**
+/*
  * APP列表
  */
 message AppListResp {
@@ -53,7 +53,7 @@ message AppListResp {
   int64 total = 2;  // 总数
 }
 
-/**
+/*
  * APP重置返回
  */
 message AppResetResp{

@@ -279,29 +279,6 @@
         
           
           <li>
-            <a href="#helloworld.proto">helloworld.proto</a>
-            <ul>
-              
-                <li>
-                  <a href="#helloworld.HelloReply"><span class="badge">M</span>HelloReply</a>
-                </li>
-              
-                <li>
-                  <a href="#helloworld.HelloRequest"><span class="badge">M</span>HelloRequest</a>
-                </li>
-              
-              
-              
-              
-                <li>
-                  <a href="#helloworld.Greeter"><span class="badge">S</span>Greeter</a>
-                </li>
-              
-            </ul>
-          </li>
-        
-          
-          <li>
             <a href="#order.proto">order.proto</a>
             <ul>
               
@@ -360,15 +337,47 @@
             <ul>
               
                 <li>
-                  <a href="#product.AppItem"><span class="badge">M</span>AppItem</a>
+                  <a href="#product.AttrItem"><span class="badge">M</span>AttrItem</a>
                 </li>
               
                 <li>
-                  <a href="#product.AppListResp"><span class="badge">M</span>AppListResp</a>
+                  <a href="#product.AttrListResp"><span class="badge">M</span>AttrListResp</a>
                 </li>
               
                 <li>
-                  <a href="#product.AppResetResp"><span class="badge">M</span>AppResetResp</a>
+                  <a href="#product.CategoryItem"><span class="badge">M</span>CategoryItem</a>
+                </li>
+              
+                <li>
+                  <a href="#product.CategoryListResp"><span class="badge">M</span>CategoryListResp</a>
+                </li>
+              
+                <li>
+                  <a href="#product.GroupItem"><span class="badge">M</span>GroupItem</a>
+                </li>
+              
+                <li>
+                  <a href="#product.GroupListResp"><span class="badge">M</span>GroupListResp</a>
+                </li>
+              
+                <li>
+                  <a href="#product.ProductAttr"><span class="badge">M</span>ProductAttr</a>
+                </li>
+              
+                <li>
+                  <a href="#product.ProductAttrGroup"><span class="badge">M</span>ProductAttrGroup</a>
+                </li>
+              
+                <li>
+                  <a href="#product.ProductItem"><span class="badge">M</span>ProductItem</a>
+                </li>
+              
+                <li>
+                  <a href="#product.ProductListResp"><span class="badge">M</span>ProductListResp</a>
+                </li>
+              
+                <li>
+                  <a href="#product.ProductSku"><span class="badge">M</span>ProductSku</a>
                 </li>
               
               
@@ -376,6 +385,33 @@
               
                 <li>
                   <a href="#product.Product"><span class="badge">S</span>Product</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#sms.proto">sms.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#sms.AppItem"><span class="badge">M</span>AppItem</a>
+                </li>
+              
+                <li>
+                  <a href="#sms.AppListResp"><span class="badge">M</span>AppListResp</a>
+                </li>
+              
+                <li>
+                  <a href="#sms.AppResetResp"><span class="badge">M</span>AppResetResp</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#sms.sms"><span class="badge">S</span>sms</a>
                 </li>
               
             </ul>
@@ -417,11 +453,11 @@
       <div class="file-heading">
         <h2 id="auth.proto">auth.proto</h2><a href="#title">Top</a>
       </div>
-      <p></p><p>授权中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+      <p>授权中心</p><p>设计中</p>
 
       
         <h3 id="auth.AppItem">AppItem</h3>
-        <p></p><p>APP详情</p>
+        <p>APP详情</p>
 
         
           <table class="field-table">
@@ -494,7 +530,7 @@
         
       
         <h3 id="auth.AppListResp">AppListResp</h3>
-        <p></p><p>APP列表</p>
+        <p>APP列表</p>
 
         
           <table class="field-table">
@@ -525,7 +561,7 @@
         
       
         <h3 id="auth.AppResetResp">AppResetResp</h3>
-        <p></p><p>APP重置返回</p>
+        <p>APP重置返回</p>
 
         
           <table class="field-table">
@@ -562,7 +598,7 @@
 
       
         <h3 id="auth.Auth">Auth</h3>
-        <p></p><p>授权中心</p>
+        <p>授权中心</p>
         <table class="enum-table">
           <thead>
             <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
@@ -613,18 +649,18 @@
       <div class="file-heading">
         <h2 id="base.proto">base.proto</h2><a href="#title">Top</a>
       </div>
-      <p></p><p>通用</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+      <p>通用</p><p>设计中</p>
 
       
         <h3 id="base.Empty">Empty</h3>
-        <p></p><p>空返回</p>
+        <p>空返回</p>
 
         
 
         
       
         <h3 id="base.IdReq">IdReq</h3>
-        <p></p><p>IdReq 通用Id参数</p>
+        <p>IdReq 通用Id参数</p>
 
         
           <table class="field-table">
@@ -648,7 +684,7 @@
         
       
         <h3 id="base.ListReq">ListReq</h3>
-        <p></p><p>ListReq 通用列表参数</p>
+        <p>ListReq 通用列表参数</p>
 
         
           <table class="field-table">
@@ -696,11 +732,11 @@
       <div class="file-heading">
         <h2 id="cms.proto">cms.proto</h2><a href="#title">Top</a>
       </div>
-      <p></p><p>内容中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+      <p>内容中心</p><p>设计中</p>
 
       
         <h3 id="cms.AppItem">AppItem</h3>
-        <p></p><p>APP详情</p>
+        <p>APP详情</p>
 
         
           <table class="field-table">
@@ -773,7 +809,7 @@
         
       
         <h3 id="cms.AppListResp">AppListResp</h3>
-        <p></p><p>APP列表</p>
+        <p>APP列表</p>
 
         
           <table class="field-table">
@@ -804,7 +840,7 @@
         
       
         <h3 id="cms.AppResetResp">AppResetResp</h3>
-        <p></p><p>APP重置返回</p>
+        <p>APP重置返回</p>
 
         
           <table class="field-table">
@@ -841,7 +877,7 @@
 
       
         <h3 id="cms.cms">cms</h3>
-        <p></p><p>商品中心</p>
+        <p>商品中心</p>
         <table class="enum-table">
           <thead>
             <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
@@ -892,11 +928,11 @@
       <div class="file-heading">
         <h2 id="file.proto">file.proto</h2><a href="#title">Top</a>
       </div>
-      <p></p><p>文件中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+      <p>文件中心</p><p>设计中</p>
 
       
         <h3 id="file.AppItem">AppItem</h3>
-        <p></p><p>APP详情</p>
+        <p>APP详情</p>
 
         
           <table class="field-table">
@@ -969,7 +1005,7 @@
         
       
         <h3 id="file.AppListResp">AppListResp</h3>
-        <p></p><p>APP列表</p>
+        <p>APP列表</p>
 
         
           <table class="field-table">
@@ -1000,7 +1036,7 @@
         
       
         <h3 id="file.AppResetResp">AppResetResp</h3>
-        <p></p><p>APP重置返回</p>
+        <p>APP重置返回</p>
 
         
           <table class="field-table">
@@ -1037,7 +1073,7 @@
 
       
         <h3 id="file.file">file</h3>
-        <p></p><p>商品中心</p>
+        <p>商品中心</p>
         <table class="enum-table">
           <thead>
             <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
@@ -1086,94 +1122,13 @@
     
       
       <div class="file-heading">
-        <h2 id="helloworld.proto">helloworld.proto</h2><a href="#title">Top</a>
-      </div>
-      <p></p>
-
-      
-        <h3 id="helloworld.HelloReply">HelloReply</h3>
-        <p>The response message containing the greetings</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>message</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="helloworld.HelloRequest">HelloRequest</h3>
-        <p>The request message containing the user's name.</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>name</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-
-      
-
-      
-
-      
-        <h3 id="helloworld.Greeter">Greeter</h3>
-        <p>The greeting service definition.</p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>SayHello</td>
-                <td><a href="#helloworld.HelloRequest">HelloRequest</a></td>
-                <td><a href="#helloworld.HelloReply">HelloReply</a></td>
-                <td><p>Sends a greeting</p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-
-        
-    
-      
-      <div class="file-heading">
         <h2 id="order.proto">order.proto</h2><a href="#title">Top</a>
       </div>
-      <p></p><p>订单中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+      <p>订单中心</p><p>设计中</p>
 
       
         <h3 id="order.AppItem">AppItem</h3>
-        <p></p><p>APP详情</p>
+        <p>APP详情</p>
 
         
           <table class="field-table">
@@ -1246,7 +1201,7 @@
         
       
         <h3 id="order.AppListResp">AppListResp</h3>
-        <p></p><p>APP列表</p>
+        <p>APP列表</p>
 
         
           <table class="field-table">
@@ -1277,7 +1232,7 @@
         
       
         <h3 id="order.AppResetResp">AppResetResp</h3>
-        <p></p><p>APP重置返回</p>
+        <p>APP重置返回</p>
 
         
           <table class="field-table">
@@ -1314,7 +1269,7 @@
 
       
         <h3 id="order.order">order</h3>
-        <p></p><p>商品中心</p>
+        <p>商品中心</p>
         <table class="enum-table">
           <thead>
             <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
@@ -1365,11 +1320,11 @@
       <div class="file-heading">
         <h2 id="pay.proto">pay.proto</h2><a href="#title">Top</a>
       </div>
-      <p></p><p>支付中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+      <p>支付中心</p><p>设计中</p>
 
       
         <h3 id="pay.AppItem">AppItem</h3>
-        <p></p><p>APP详情</p>
+        <p>APP详情</p>
 
         
           <table class="field-table">
@@ -1442,7 +1397,7 @@
         
       
         <h3 id="pay.AppListResp">AppListResp</h3>
-        <p></p><p>APP列表</p>
+        <p>APP列表</p>
 
         
           <table class="field-table">
@@ -1473,7 +1428,7 @@
         
       
         <h3 id="pay.AppResetResp">AppResetResp</h3>
-        <p></p><p>APP重置返回</p>
+        <p>APP重置返回</p>
 
         
           <table class="field-table">
@@ -1510,7 +1465,7 @@
 
       
         <h3 id="pay.pay">pay</h3>
-        <p></p><p>商品中心</p>
+        <p>商品中心</p>
         <table class="enum-table">
           <thead>
             <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
@@ -1561,11 +1516,833 @@
       <div class="file-heading">
         <h2 id="product.proto">product.proto</h2><a href="#title">Top</a>
       </div>
-      <p></p><p>商品中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+      <p>商品中心</p><p>设计中</p>
 
       
-        <h3 id="product.AppItem">AppItem</h3>
-        <p></p><p>APP详情</p>
+        <h3 id="product.AttrItem">AttrItem</h3>
+        <p>Attr详情</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>数据ID,创建时传0 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>属性名 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>desc</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>属性描述 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AttrKey </p></td>
+                </tr>
+              
+                <tr>
+                  <td>is_important</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>是否重要属性 0否 1是 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>is_required</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>是否必填 0否 1是 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>is_custom</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>是否自定义添加 0否 1是 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>form_type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>form类型 input, select, checkbox </p></td>
+                </tr>
+              
+                <tr>
+                  <td>form_optional</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>form类型 input时，默认值，select, checkbox时,可选范围项 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>custom_label</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>自定义标签 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sort</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>排序 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>状态 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="product.AttrListResp">AttrListResp</h3>
+        <p>Attr列表</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>items</td>
+                  <td><a href="#product.AttrItem">AttrItem</a></td>
+                  <td>repeated</td>
+                  <td><p>列表 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>总数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="product.CategoryItem">CategoryItem</h3>
+        <p>Category 详情</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>数据ID,创建时传0 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pid</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>父ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>分类名称 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>desc</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>分类描述 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pic_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>分类图片 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sort</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>排序 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>custom_label</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>自定义标签 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>is_leaf</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>是否为叶子分类 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>状态 1:enable, 0:disable </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="product.CategoryListResp">CategoryListResp</h3>
+        <p>Category 列表</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>items</td>
+                  <td><a href="#product.CategoryItem">CategoryItem</a></td>
+                  <td>repeated</td>
+                  <td><p>列表 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>总数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="product.GroupItem">GroupItem</h3>
+        <p>Group 详情</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>数据ID,创建时传0 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>group_type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>分组类型 base基础属性, sale销售属性, categ类别属性 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>分组名称 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>desc</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>分组描述 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>custom_label</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>自定义标签 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sort</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>排序 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>状态 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>items</td>
+                  <td><a href="#product.AttrItem">AttrItem</a></td>
+                  <td>repeated</td>
+                  <td><p>属性列表 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="product.GroupListResp">GroupListResp</h3>
+        <p>Group 列表</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>items</td>
+                  <td><a href="#product.GroupItem">GroupItem</a></td>
+                  <td>repeated</td>
+                  <td><p>列表 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>总数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="product.ProductAttr">ProductAttr</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>attr_id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>属性ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>属性值 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="product.ProductAttrGroup">ProductAttrGroup</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>group_id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>分组ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>group_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>分组名称 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>attrs</td>
+                  <td><a href="#product.ProductAttr">ProductAttr</a></td>
+                  <td>repeated</td>
+                  <td><p>销售属性 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="product.ProductItem">ProductItem</h3>
+        <p>Product 详情</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>数据ID,创建时传0 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>category_id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>分类ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>商品名称 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>in_stock</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>库存 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sales</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>已售数量 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cover_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>封面图 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>video_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>介绍视频 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>is_recommend</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>是否推荐 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>price_fee</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>售价，整数方式保存 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>market_price_fee</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>市场价，整数方式保存 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>custom_label</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>自定义标签 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>content_type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>详情类型 容类型:html json </p></td>
+                </tr>
+              
+                <tr>
+                  <td>content</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>详情 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cate_attrs</td>
+                  <td><a href="#product.ProductAttr">ProductAttr</a></td>
+                  <td>repeated</td>
+                  <td><p>类目属性 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sale_group</td>
+                  <td><a href="#product.ProductAttrGroup">ProductAttrGroup</a></td>
+                  <td>repeated</td>
+                  <td><p>销售属性 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sku</td>
+                  <td><a href="#product.ProductSku">ProductSku</a></td>
+                  <td>repeated</td>
+                  <td><p>销售规格 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sort</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>排序 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>状态 1:enable, 0:disable </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="product.ProductListResp">ProductListResp</h3>
+        <p>Product 列表</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>items</td>
+                  <td><a href="#product.ProductItem">ProductItem</a></td>
+                  <td>repeated</td>
+                  <td><p>列表 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>总数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="product.ProductSku">ProductSku</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>数据ID,创建时传0 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>spec_no</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>attrs md5后的字符串 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>attrs</td>
+                  <td><a href="#product.ProductAttr">ProductAttr</a></td>
+                  <td>repeated</td>
+                  <td><p>销售属性值{attr_id}:{attr_value},{attr_id}:{attr_value} 多个销售属性值逗号分隔 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cover_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>商品介绍主图 多个图片逗号分隔 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>in_stock</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>库存 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sales</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>销量 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>custom_label</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>自定义标签 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>price_fee</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>售价，整数方式保存 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>consign_price</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>市场价，整数方式保存 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>market_price_fee</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>成本价，整数方式保存 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>状态 1:enable, 0:disable </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="product.Product">Product</h3>
+        <p>商品中心</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>AttrList</td>
+                <td><a href="#base.ListReq">.base.ListReq</a></td>
+                <td><a href="#product.AttrListResp">AttrListResp</a></td>
+                <td><p>Attr 列表</p></td>
+              </tr>
+            
+              <tr>
+                <td>AttrDetail</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#product.AttrItem">AttrItem</a></td>
+                <td><p>Attr 详情</p></td>
+              </tr>
+            
+              <tr>
+                <td>AttrUpdateOrCreate</td>
+                <td><a href="#product.AttrItem">AttrItem</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>Attr 更新或创建</p></td>
+              </tr>
+            
+              <tr>
+                <td>AttrDelete</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>Attr 删除</p></td>
+              </tr>
+            
+              <tr>
+                <td>GroupList</td>
+                <td><a href="#base.ListReq">.base.ListReq</a></td>
+                <td><a href="#product.GroupListResp">GroupListResp</a></td>
+                <td><p>Group 列表</p></td>
+              </tr>
+            
+              <tr>
+                <td>GroupDetail</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#product.GroupItem">GroupItem</a></td>
+                <td><p>Group 详情</p></td>
+              </tr>
+            
+              <tr>
+                <td>GroupUpdateOrCreate</td>
+                <td><a href="#product.GroupItem">GroupItem</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>Group 更新或创建</p></td>
+              </tr>
+            
+              <tr>
+                <td>GroupDelete</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>Group 删除</p></td>
+              </tr>
+            
+              <tr>
+                <td>CategoryList</td>
+                <td><a href="#base.ListReq">.base.ListReq</a></td>
+                <td><a href="#product.CategoryListResp">CategoryListResp</a></td>
+                <td><p>Category 列表</p></td>
+              </tr>
+            
+              <tr>
+                <td>CategoryDetail</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#product.CategoryItem">CategoryItem</a></td>
+                <td><p>Category 详情</p></td>
+              </tr>
+            
+              <tr>
+                <td>CategoryUpdateOrCreate</td>
+                <td><a href="#product.CategoryItem">CategoryItem</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>Category 更新或创建</p></td>
+              </tr>
+            
+              <tr>
+                <td>CategoryDelete</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>Category 删除</p></td>
+              </tr>
+            
+              <tr>
+                <td>ProductList</td>
+                <td><a href="#base.ListReq">.base.ListReq</a></td>
+                <td><a href="#product.ProductListResp">ProductListResp</a></td>
+                <td><p>Product 列表</p></td>
+              </tr>
+            
+              <tr>
+                <td>ProductDetail</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#product.ProductItem">ProductItem</a></td>
+                <td><p>Product 详情</p></td>
+              </tr>
+            
+              <tr>
+                <td>ProductUpdateOrCreate</td>
+                <td><a href="#product.ProductItem">ProductItem</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>Product 更新或创建</p></td>
+              </tr>
+            
+              <tr>
+                <td>ProductDelete</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>Product 删除</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+      
+      <div class="file-heading">
+        <h2 id="sms.proto">sms.proto</h2><a href="#title">Top</a>
+      </div>
+      <p>短信服务</p><p>设计中</p>
+
+      
+        <h3 id="sms.AppItem">AppItem</h3>
+        <p>APP详情</p>
 
         
           <table class="field-table">
@@ -1637,8 +2414,8 @@
 
         
       
-        <h3 id="product.AppListResp">AppListResp</h3>
-        <p></p><p>APP列表</p>
+        <h3 id="sms.AppListResp">AppListResp</h3>
+        <p>APP列表</p>
 
         
           <table class="field-table">
@@ -1649,7 +2426,7 @@
               
                 <tr>
                   <td>items</td>
-                  <td><a href="#product.AppItem">AppItem</a></td>
+                  <td><a href="#sms.AppItem">AppItem</a></td>
                   <td>repeated</td>
                   <td><p>列表 </p></td>
                 </tr>
@@ -1668,8 +2445,8 @@
 
         
       
-        <h3 id="product.AppResetResp">AppResetResp</h3>
-        <p></p><p>APP重置返回</p>
+        <h3 id="sms.AppResetResp">AppResetResp</h3>
+        <p>APP重置返回</p>
 
         
           <table class="field-table">
@@ -1705,8 +2482,8 @@
       
 
       
-        <h3 id="product.Product">Product</h3>
-        <p></p><p>商品中心</p>
+        <h3 id="sms.sms">sms</h3>
+        <p>商品中心</p>
         <table class="enum-table">
           <thead>
             <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
@@ -1716,20 +2493,20 @@
               <tr>
                 <td>AppList</td>
                 <td><a href="#base.ListReq">.base.ListReq</a></td>
-                <td><a href="#product.AppListResp">AppListResp</a></td>
+                <td><a href="#sms.AppListResp">AppListResp</a></td>
                 <td><p>APP列表</p></td>
               </tr>
             
               <tr>
                 <td>AppDetail</td>
                 <td><a href="#base.IdReq">.base.IdReq</a></td>
-                <td><a href="#product.AppItem">AppItem</a></td>
+                <td><a href="#sms.AppItem">AppItem</a></td>
                 <td><p>APP详情</p></td>
               </tr>
             
               <tr>
                 <td>AppUpdateOrCreate</td>
-                <td><a href="#product.AppItem">AppItem</a></td>
+                <td><a href="#sms.AppItem">AppItem</a></td>
                 <td><a href="#base.Empty">.base.Empty</a></td>
                 <td><p>APP更新或创建</p></td>
               </tr>
@@ -1744,7 +2521,7 @@
               <tr>
                 <td>AppReset</td>
                 <td><a href="#base.IdReq">.base.IdReq</a></td>
-                <td><a href="#product.AppResetResp">AppResetResp</a></td>
+                <td><a href="#sms.AppResetResp">AppResetResp</a></td>
                 <td><p>APP重置Secret</p></td>
               </tr>
             
@@ -1757,11 +2534,11 @@
       <div class="file-heading">
         <h2 id="user.proto">user.proto</h2><a href="#title">Top</a>
       </div>
-      <p></p><p>用户中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+      <p>用户中心</p><p>设计中</p>
 
       
         <h3 id="user.AppItem">AppItem</h3>
-        <p></p><p>APP详情</p>
+        <p>APP详情</p>
 
         
           <table class="field-table">
@@ -1834,7 +2611,7 @@
         
       
         <h3 id="user.AppListResp">AppListResp</h3>
-        <p></p><p>APP列表</p>
+        <p>APP列表</p>
 
         
           <table class="field-table">
@@ -1865,7 +2642,7 @@
         
       
         <h3 id="user.AppResetResp">AppResetResp</h3>
-        <p></p><p>APP重置返回</p>
+        <p>APP重置返回</p>
 
         
           <table class="field-table">
@@ -1902,7 +2679,7 @@
 
       
         <h3 id="user.user">user</h3>
-        <p></p><p>商品中心</p>
+        <p>商品中心</p>
         <table class="enum-table">
           <thead>
             <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>

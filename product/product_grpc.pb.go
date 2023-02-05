@@ -23,16 +23,38 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ProductClient interface {
-	// APP列表
-	AppList(ctx context.Context, in *base.ListReq, opts ...grpc.CallOption) (*AppListResp, error)
-	// APP详情
-	AppDetail(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*AppItem, error)
-	// APP更新或创建
-	AppUpdateOrCreate(ctx context.Context, in *AppItem, opts ...grpc.CallOption) (*base.Empty, error)
-	// APP删除
-	AppDelete(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*base.Empty, error)
-	// APP重置Secret
-	AppReset(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*AppResetResp, error)
+	// Attr 列表
+	AttrList(ctx context.Context, in *base.ListReq, opts ...grpc.CallOption) (*AttrListResp, error)
+	// Attr 详情
+	AttrDetail(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*AttrItem, error)
+	// Attr 更新或创建
+	AttrUpdateOrCreate(ctx context.Context, in *AttrItem, opts ...grpc.CallOption) (*base.Empty, error)
+	// Attr 删除
+	AttrDelete(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*base.Empty, error)
+	// Group 列表
+	GroupList(ctx context.Context, in *base.ListReq, opts ...grpc.CallOption) (*GroupListResp, error)
+	// Group 详情
+	GroupDetail(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*GroupItem, error)
+	// Group 更新或创建
+	GroupUpdateOrCreate(ctx context.Context, in *GroupItem, opts ...grpc.CallOption) (*base.Empty, error)
+	// Group 删除
+	GroupDelete(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*base.Empty, error)
+	// Category 列表
+	CategoryList(ctx context.Context, in *base.ListReq, opts ...grpc.CallOption) (*CategoryListResp, error)
+	// Category 详情
+	CategoryDetail(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*CategoryItem, error)
+	// Category 更新或创建
+	CategoryUpdateOrCreate(ctx context.Context, in *CategoryItem, opts ...grpc.CallOption) (*base.Empty, error)
+	// Category 删除
+	CategoryDelete(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*base.Empty, error)
+	// Product 列表
+	ProductList(ctx context.Context, in *base.ListReq, opts ...grpc.CallOption) (*ProductListResp, error)
+	// Product 详情
+	ProductDetail(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*ProductItem, error)
+	// Product 更新或创建
+	ProductUpdateOrCreate(ctx context.Context, in *ProductItem, opts ...grpc.CallOption) (*base.Empty, error)
+	// Product 删除
+	ProductDelete(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*base.Empty, error)
 }
 
 type productClient struct {
@@ -43,45 +65,144 @@ func NewProductClient(cc grpc.ClientConnInterface) ProductClient {
 	return &productClient{cc}
 }
 
-func (c *productClient) AppList(ctx context.Context, in *base.ListReq, opts ...grpc.CallOption) (*AppListResp, error) {
-	out := new(AppListResp)
-	err := c.cc.Invoke(ctx, "/product.Product/AppList", in, out, opts...)
+func (c *productClient) AttrList(ctx context.Context, in *base.ListReq, opts ...grpc.CallOption) (*AttrListResp, error) {
+	out := new(AttrListResp)
+	err := c.cc.Invoke(ctx, "/product.Product/AttrList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *productClient) AppDetail(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*AppItem, error) {
-	out := new(AppItem)
-	err := c.cc.Invoke(ctx, "/product.Product/AppDetail", in, out, opts...)
+func (c *productClient) AttrDetail(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*AttrItem, error) {
+	out := new(AttrItem)
+	err := c.cc.Invoke(ctx, "/product.Product/AttrDetail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *productClient) AppUpdateOrCreate(ctx context.Context, in *AppItem, opts ...grpc.CallOption) (*base.Empty, error) {
+func (c *productClient) AttrUpdateOrCreate(ctx context.Context, in *AttrItem, opts ...grpc.CallOption) (*base.Empty, error) {
 	out := new(base.Empty)
-	err := c.cc.Invoke(ctx, "/product.Product/AppUpdateOrCreate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/product.Product/AttrUpdateOrCreate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *productClient) AppDelete(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*base.Empty, error) {
+func (c *productClient) AttrDelete(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*base.Empty, error) {
 	out := new(base.Empty)
-	err := c.cc.Invoke(ctx, "/product.Product/AppDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/product.Product/AttrDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *productClient) AppReset(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*AppResetResp, error) {
-	out := new(AppResetResp)
-	err := c.cc.Invoke(ctx, "/product.Product/AppReset", in, out, opts...)
+func (c *productClient) GroupList(ctx context.Context, in *base.ListReq, opts ...grpc.CallOption) (*GroupListResp, error) {
+	out := new(GroupListResp)
+	err := c.cc.Invoke(ctx, "/product.Product/GroupList", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *productClient) GroupDetail(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*GroupItem, error) {
+	out := new(GroupItem)
+	err := c.cc.Invoke(ctx, "/product.Product/GroupDetail", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *productClient) GroupUpdateOrCreate(ctx context.Context, in *GroupItem, opts ...grpc.CallOption) (*base.Empty, error) {
+	out := new(base.Empty)
+	err := c.cc.Invoke(ctx, "/product.Product/GroupUpdateOrCreate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *productClient) GroupDelete(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*base.Empty, error) {
+	out := new(base.Empty)
+	err := c.cc.Invoke(ctx, "/product.Product/GroupDelete", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *productClient) CategoryList(ctx context.Context, in *base.ListReq, opts ...grpc.CallOption) (*CategoryListResp, error) {
+	out := new(CategoryListResp)
+	err := c.cc.Invoke(ctx, "/product.Product/CategoryList", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *productClient) CategoryDetail(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*CategoryItem, error) {
+	out := new(CategoryItem)
+	err := c.cc.Invoke(ctx, "/product.Product/CategoryDetail", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *productClient) CategoryUpdateOrCreate(ctx context.Context, in *CategoryItem, opts ...grpc.CallOption) (*base.Empty, error) {
+	out := new(base.Empty)
+	err := c.cc.Invoke(ctx, "/product.Product/CategoryUpdateOrCreate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *productClient) CategoryDelete(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*base.Empty, error) {
+	out := new(base.Empty)
+	err := c.cc.Invoke(ctx, "/product.Product/CategoryDelete", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *productClient) ProductList(ctx context.Context, in *base.ListReq, opts ...grpc.CallOption) (*ProductListResp, error) {
+	out := new(ProductListResp)
+	err := c.cc.Invoke(ctx, "/product.Product/ProductList", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *productClient) ProductDetail(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*ProductItem, error) {
+	out := new(ProductItem)
+	err := c.cc.Invoke(ctx, "/product.Product/ProductDetail", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *productClient) ProductUpdateOrCreate(ctx context.Context, in *ProductItem, opts ...grpc.CallOption) (*base.Empty, error) {
+	out := new(base.Empty)
+	err := c.cc.Invoke(ctx, "/product.Product/ProductUpdateOrCreate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *productClient) ProductDelete(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*base.Empty, error) {
+	out := new(base.Empty)
+	err := c.cc.Invoke(ctx, "/product.Product/ProductDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -92,16 +213,38 @@ func (c *productClient) AppReset(ctx context.Context, in *base.IdReq, opts ...gr
 // All implementations must embed UnimplementedProductServer
 // for forward compatibility
 type ProductServer interface {
-	// APP列表
-	AppList(context.Context, *base.ListReq) (*AppListResp, error)
-	// APP详情
-	AppDetail(context.Context, *base.IdReq) (*AppItem, error)
-	// APP更新或创建
-	AppUpdateOrCreate(context.Context, *AppItem) (*base.Empty, error)
-	// APP删除
-	AppDelete(context.Context, *base.IdReq) (*base.Empty, error)
-	// APP重置Secret
-	AppReset(context.Context, *base.IdReq) (*AppResetResp, error)
+	// Attr 列表
+	AttrList(context.Context, *base.ListReq) (*AttrListResp, error)
+	// Attr 详情
+	AttrDetail(context.Context, *base.IdReq) (*AttrItem, error)
+	// Attr 更新或创建
+	AttrUpdateOrCreate(context.Context, *AttrItem) (*base.Empty, error)
+	// Attr 删除
+	AttrDelete(context.Context, *base.IdReq) (*base.Empty, error)
+	// Group 列表
+	GroupList(context.Context, *base.ListReq) (*GroupListResp, error)
+	// Group 详情
+	GroupDetail(context.Context, *base.IdReq) (*GroupItem, error)
+	// Group 更新或创建
+	GroupUpdateOrCreate(context.Context, *GroupItem) (*base.Empty, error)
+	// Group 删除
+	GroupDelete(context.Context, *base.IdReq) (*base.Empty, error)
+	// Category 列表
+	CategoryList(context.Context, *base.ListReq) (*CategoryListResp, error)
+	// Category 详情
+	CategoryDetail(context.Context, *base.IdReq) (*CategoryItem, error)
+	// Category 更新或创建
+	CategoryUpdateOrCreate(context.Context, *CategoryItem) (*base.Empty, error)
+	// Category 删除
+	CategoryDelete(context.Context, *base.IdReq) (*base.Empty, error)
+	// Product 列表
+	ProductList(context.Context, *base.ListReq) (*ProductListResp, error)
+	// Product 详情
+	ProductDetail(context.Context, *base.IdReq) (*ProductItem, error)
+	// Product 更新或创建
+	ProductUpdateOrCreate(context.Context, *ProductItem) (*base.Empty, error)
+	// Product 删除
+	ProductDelete(context.Context, *base.IdReq) (*base.Empty, error)
 	mustEmbedUnimplementedProductServer()
 }
 
@@ -109,20 +252,53 @@ type ProductServer interface {
 type UnimplementedProductServer struct {
 }
 
-func (UnimplementedProductServer) AppList(context.Context, *base.ListReq) (*AppListResp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AppList not implemented")
+func (UnimplementedProductServer) AttrList(context.Context, *base.ListReq) (*AttrListResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AttrList not implemented")
 }
-func (UnimplementedProductServer) AppDetail(context.Context, *base.IdReq) (*AppItem, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AppDetail not implemented")
+func (UnimplementedProductServer) AttrDetail(context.Context, *base.IdReq) (*AttrItem, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AttrDetail not implemented")
 }
-func (UnimplementedProductServer) AppUpdateOrCreate(context.Context, *AppItem) (*base.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AppUpdateOrCreate not implemented")
+func (UnimplementedProductServer) AttrUpdateOrCreate(context.Context, *AttrItem) (*base.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AttrUpdateOrCreate not implemented")
 }
-func (UnimplementedProductServer) AppDelete(context.Context, *base.IdReq) (*base.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AppDelete not implemented")
+func (UnimplementedProductServer) AttrDelete(context.Context, *base.IdReq) (*base.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AttrDelete not implemented")
 }
-func (UnimplementedProductServer) AppReset(context.Context, *base.IdReq) (*AppResetResp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AppReset not implemented")
+func (UnimplementedProductServer) GroupList(context.Context, *base.ListReq) (*GroupListResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GroupList not implemented")
+}
+func (UnimplementedProductServer) GroupDetail(context.Context, *base.IdReq) (*GroupItem, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GroupDetail not implemented")
+}
+func (UnimplementedProductServer) GroupUpdateOrCreate(context.Context, *GroupItem) (*base.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GroupUpdateOrCreate not implemented")
+}
+func (UnimplementedProductServer) GroupDelete(context.Context, *base.IdReq) (*base.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GroupDelete not implemented")
+}
+func (UnimplementedProductServer) CategoryList(context.Context, *base.ListReq) (*CategoryListResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CategoryList not implemented")
+}
+func (UnimplementedProductServer) CategoryDetail(context.Context, *base.IdReq) (*CategoryItem, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CategoryDetail not implemented")
+}
+func (UnimplementedProductServer) CategoryUpdateOrCreate(context.Context, *CategoryItem) (*base.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CategoryUpdateOrCreate not implemented")
+}
+func (UnimplementedProductServer) CategoryDelete(context.Context, *base.IdReq) (*base.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CategoryDelete not implemented")
+}
+func (UnimplementedProductServer) ProductList(context.Context, *base.ListReq) (*ProductListResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ProductList not implemented")
+}
+func (UnimplementedProductServer) ProductDetail(context.Context, *base.IdReq) (*ProductItem, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ProductDetail not implemented")
+}
+func (UnimplementedProductServer) ProductUpdateOrCreate(context.Context, *ProductItem) (*base.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ProductUpdateOrCreate not implemented")
+}
+func (UnimplementedProductServer) ProductDelete(context.Context, *base.IdReq) (*base.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ProductDelete not implemented")
 }
 func (UnimplementedProductServer) mustEmbedUnimplementedProductServer() {}
 
@@ -137,92 +313,290 @@ func RegisterProductServer(s grpc.ServiceRegistrar, srv ProductServer) {
 	s.RegisterService(&Product_ServiceDesc, srv)
 }
 
-func _Product_AppList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Product_AttrList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(base.ListReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProductServer).AppList(ctx, in)
+		return srv.(ProductServer).AttrList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/product.Product/AppList",
+		FullMethod: "/product.Product/AttrList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProductServer).AppList(ctx, req.(*base.ListReq))
+		return srv.(ProductServer).AttrList(ctx, req.(*base.ListReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Product_AppDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Product_AttrDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(base.IdReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProductServer).AppDetail(ctx, in)
+		return srv.(ProductServer).AttrDetail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/product.Product/AppDetail",
+		FullMethod: "/product.Product/AttrDetail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProductServer).AppDetail(ctx, req.(*base.IdReq))
+		return srv.(ProductServer).AttrDetail(ctx, req.(*base.IdReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Product_AppUpdateOrCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AppItem)
+func _Product_AttrUpdateOrCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AttrItem)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProductServer).AppUpdateOrCreate(ctx, in)
+		return srv.(ProductServer).AttrUpdateOrCreate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/product.Product/AppUpdateOrCreate",
+		FullMethod: "/product.Product/AttrUpdateOrCreate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProductServer).AppUpdateOrCreate(ctx, req.(*AppItem))
+		return srv.(ProductServer).AttrUpdateOrCreate(ctx, req.(*AttrItem))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Product_AppDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Product_AttrDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(base.IdReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProductServer).AppDelete(ctx, in)
+		return srv.(ProductServer).AttrDelete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/product.Product/AppDelete",
+		FullMethod: "/product.Product/AttrDelete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProductServer).AppDelete(ctx, req.(*base.IdReq))
+		return srv.(ProductServer).AttrDelete(ctx, req.(*base.IdReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Product_AppReset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Product_GroupList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(base.ListReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).GroupList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/product.Product/GroupList",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).GroupList(ctx, req.(*base.ListReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Product_GroupDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(base.IdReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProductServer).AppReset(ctx, in)
+		return srv.(ProductServer).GroupDetail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/product.Product/AppReset",
+		FullMethod: "/product.Product/GroupDetail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProductServer).AppReset(ctx, req.(*base.IdReq))
+		return srv.(ProductServer).GroupDetail(ctx, req.(*base.IdReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Product_GroupUpdateOrCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GroupItem)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).GroupUpdateOrCreate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/product.Product/GroupUpdateOrCreate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).GroupUpdateOrCreate(ctx, req.(*GroupItem))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Product_GroupDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(base.IdReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).GroupDelete(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/product.Product/GroupDelete",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).GroupDelete(ctx, req.(*base.IdReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Product_CategoryList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(base.ListReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).CategoryList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/product.Product/CategoryList",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).CategoryList(ctx, req.(*base.ListReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Product_CategoryDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(base.IdReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).CategoryDetail(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/product.Product/CategoryDetail",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).CategoryDetail(ctx, req.(*base.IdReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Product_CategoryUpdateOrCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CategoryItem)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).CategoryUpdateOrCreate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/product.Product/CategoryUpdateOrCreate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).CategoryUpdateOrCreate(ctx, req.(*CategoryItem))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Product_CategoryDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(base.IdReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).CategoryDelete(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/product.Product/CategoryDelete",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).CategoryDelete(ctx, req.(*base.IdReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Product_ProductList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(base.ListReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).ProductList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/product.Product/ProductList",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).ProductList(ctx, req.(*base.ListReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Product_ProductDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(base.IdReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).ProductDetail(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/product.Product/ProductDetail",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).ProductDetail(ctx, req.(*base.IdReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Product_ProductUpdateOrCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ProductItem)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).ProductUpdateOrCreate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/product.Product/ProductUpdateOrCreate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).ProductUpdateOrCreate(ctx, req.(*ProductItem))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Product_ProductDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(base.IdReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).ProductDelete(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/product.Product/ProductDelete",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).ProductDelete(ctx, req.(*base.IdReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -235,24 +609,68 @@ var Product_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*ProductServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "AppList",
-			Handler:    _Product_AppList_Handler,
+			MethodName: "AttrList",
+			Handler:    _Product_AttrList_Handler,
 		},
 		{
-			MethodName: "AppDetail",
-			Handler:    _Product_AppDetail_Handler,
+			MethodName: "AttrDetail",
+			Handler:    _Product_AttrDetail_Handler,
 		},
 		{
-			MethodName: "AppUpdateOrCreate",
-			Handler:    _Product_AppUpdateOrCreate_Handler,
+			MethodName: "AttrUpdateOrCreate",
+			Handler:    _Product_AttrUpdateOrCreate_Handler,
 		},
 		{
-			MethodName: "AppDelete",
-			Handler:    _Product_AppDelete_Handler,
+			MethodName: "AttrDelete",
+			Handler:    _Product_AttrDelete_Handler,
 		},
 		{
-			MethodName: "AppReset",
-			Handler:    _Product_AppReset_Handler,
+			MethodName: "GroupList",
+			Handler:    _Product_GroupList_Handler,
+		},
+		{
+			MethodName: "GroupDetail",
+			Handler:    _Product_GroupDetail_Handler,
+		},
+		{
+			MethodName: "GroupUpdateOrCreate",
+			Handler:    _Product_GroupUpdateOrCreate_Handler,
+		},
+		{
+			MethodName: "GroupDelete",
+			Handler:    _Product_GroupDelete_Handler,
+		},
+		{
+			MethodName: "CategoryList",
+			Handler:    _Product_CategoryList_Handler,
+		},
+		{
+			MethodName: "CategoryDetail",
+			Handler:    _Product_CategoryDetail_Handler,
+		},
+		{
+			MethodName: "CategoryUpdateOrCreate",
+			Handler:    _Product_CategoryUpdateOrCreate_Handler,
+		},
+		{
+			MethodName: "CategoryDelete",
+			Handler:    _Product_CategoryDelete_Handler,
+		},
+		{
+			MethodName: "ProductList",
+			Handler:    _Product_ProductList_Handler,
+		},
+		{
+			MethodName: "ProductDetail",
+			Handler:    _Product_ProductDetail_Handler,
+		},
+		{
+			MethodName: "ProductUpdateOrCreate",
+			Handler:    _Product_ProductUpdateOrCreate_Handler,
+		},
+		{
+			MethodName: "ProductDelete",
+			Handler:    _Product_ProductDelete_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

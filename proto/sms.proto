@@ -1,24 +1,23 @@
-
 /*
- * 文件中心
+ * 短信服务
  *
  * 设计中
  */
 syntax = "proto3";
 
-option go_package = "github.com/cba/spec/file";
+option go_package = "github.com/cba/spec/sms";
 option java_multiple_files = true;
-option java_package = "io.github.cba.file";
-option java_outer_classname = "fileProto";
+option java_package = "io.github.cba.sms";
+option java_outer_classname = "smsProto";
 
-package file;
+package sms;
 
 import "base.proto";
 
 /*
  * 商品中心
  */
-service file {
+service sms {
   // APP列表
   rpc AppList (base.ListReq) returns (AppListResp) {}
   // APP详情

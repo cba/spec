@@ -1,4 +1,4 @@
-PROJECTS=auth cms file helloworld order pay product user
+PROJECTS=base auth cms file order pay product sms user
 PROTO_DIR=./proto
 DOC_DIR=./docs
 

@@ -1,7 +1,7 @@
-/**
+/*
  * 商品中心
  *
- * 这个文件实际上只是一个示例。数据模型完全是虚构的。
+ * 设计中
  */
 syntax = "proto3";
 
@@ -14,48 +14,169 @@ package product;
 
 import "base.proto";
 
-/**
+/*
  * 商品中心
  */
 service Product {
-  // APP列表
-  rpc AppList (base.ListReq) returns (AppListResp) {}
-  // APP详情
-  rpc AppDetail (base.IdReq) returns (AppItem) {}
-  // APP更新或创建
-  rpc AppUpdateOrCreate (AppItem) returns (base.Empty) {}
-  // APP删除
-  rpc AppDelete (base.IdReq) returns (base.Empty) {}
-  // APP重置Secret
-  rpc AppReset (base.IdReq) returns (AppResetResp) {}
+  // Attr 列表
+  rpc AttrList (base.ListReq) returns (AttrListResp) {}
+  // Attr 详情
+  rpc AttrDetail (base.IdReq) returns (AttrItem) {}
+  // Attr 更新或创建
+  rpc AttrUpdateOrCreate (AttrItem) returns (base.Empty) {}
+  // Attr 删除
+  rpc AttrDelete (base.IdReq) returns (base.Empty) {}
+
+  // Group 列表
+  rpc GroupList (base.ListReq) returns (GroupListResp) {}
+  // Group 详情
+  rpc GroupDetail (base.IdReq) returns (GroupItem) {}
+  // Group 更新或创建
+  rpc GroupUpdateOrCreate (GroupItem) returns (base.Empty) {}
+  // Group 删除
+  rpc GroupDelete (base.IdReq) returns (base.Empty) {}
+
+  // Category 列表
+  rpc CategoryList (base.ListReq) returns (CategoryListResp) {}
+  // Category 详情
+  rpc CategoryDetail (base.IdReq) returns (CategoryItem) {}
+  // Category 更新或创建
+  rpc CategoryUpdateOrCreate (CategoryItem) returns (base.Empty) {}
+  // Category 删除
+  rpc CategoryDelete (base.IdReq) returns (base.Empty) {}
+
+  // Product 列表
+  rpc ProductList (base.ListReq) returns (ProductListResp) {}
+  // Product 详情
+  rpc ProductDetail (base.IdReq) returns (ProductItem) {}
+  // Product 更新或创建
+  rpc ProductUpdateOrCreate (ProductItem) returns (base.Empty) {}
+  // Product 删除
+  rpc ProductDelete (base.IdReq) returns (base.Empty) {}
 }
 
-/**
- * APP详情
+/*
+ * Attr详情
  */
-message AppItem {
+message AttrItem {
   int64  id = 1; // 数据ID,创建时传0
-  string identity = 2; // 权限标识
-  string name = 3; // APP名
-  string key = 4; // AppKey
-  string remark = 5; // 备注
-  int64 status = 6; // 状态
-  string created_at = 7; // 创建时间
-  string updated_at = 8; // 更新时间
+  string name = 2; // 属性名
+  string desc = 3; // 属性描述
+  string key = 4; // AttrKey
+  bool is_important = 5; // 是否重要属性 0否 1是
+  bool is_required = 6; // 是否必填 0否 1是
+  bool is_custom = 7; // 是否自定义添加 0否 1是
+  string form_type = 8; // form类型 input, select, checkbox
+  string form_optional = 9; // form类型 input时，默认值，select, checkbox时,可选范围项
+  string custom_label = 10; // 自定义标签
+  int64 sort = 11; // 排序
+  int64 status = 12; // 状态
 }
 
-/**
- * APP列表
+/*
+ * Attr列表
  */
-message AppListResp {
-  repeated AppItem items = 1; // 列表
+message AttrListResp {
+  repeated AttrItem items = 1; // 列表
   int64 total = 2;  // 总数
 }
 
-/**
- * APP重置返回
+/*
+ * Group 详情
  */
-message AppResetResp{
-  string key = 1; // AppKey
-  string secret = 2; // AppSecret
+message GroupItem {
+  int64  id = 1; // 数据ID,创建时传0
+  string group_type = 2; // 分组类型 base基础属性, sale销售属性, categ类别属性
+  string name = 3; // 分组名称
+  string desc = 4; // 分组描述
+  string custom_label = 5; // 自定义标签
+  int64 sort = 6; // 排序
+  int64 status = 7; // 状态
+  repeated AttrItem items = 8; // 属性列表
+}
+
+/*
+ * Group 列表
+ */
+message GroupListResp {
+  repeated GroupItem items = 1; // 列表
+  int64 total = 2;  // 总数
+}
+
+/*
+ * Category 详情
+ */
+message CategoryItem {
+  int64  id = 1; // 数据ID,创建时传0
+  int64  pid = 2; // 父ID
+  string name = 3; // 分类名称
+  string desc = 4; // 分类描述
+  string pic_url = 5; // 分类图片
+  int64 sort = 6; // 排序
+  string custom_label = 7; // 自定义标签
+  int64 is_leaf = 8; // 是否为叶子分类
+  int64 status = 9; // 状态 1:enable, 0:disable
+}
+
+/*
+ * Category 列表
+ */
+message CategoryListResp {
+  repeated CategoryItem items = 1; // 列表
+  int64 total = 2;  // 总数
+}
+
+message ProductSku {
+  int64 id = 1; // 数据ID,创建时传0
+  string spec_no = 2; // attrs md5后的字符串
+  repeated ProductAttr attrs = 3; // 销售属性值{attr_id}:{attr_value},{attr_id}:{attr_value} 多个销售属性值逗号分隔
+  string cover_url = 4; // 商品介绍主图 多个图片逗号分隔
+  int64 in_stock = 5; // 库存
+  int64 sales = 6; // 销量
+  string custom_label = 7; // 自定义标签
+  int64 price_fee = 8; // 售价，整数方式保存
+  int64 consign_price = 9; // 市场价，整数方式保存
+  int64 market_price_fee = 10; // 成本价，整数方式保存
+  int64 status = 11; // 状态 1:enable, 0:disable
+}
+message ProductAttr {
+  int64 attr_id = 1; // 属性ID
+  string value = 2; // 属性值
+}
+message ProductAttrGroup {
+  int64 group_id = 1; // 分组ID
+  string group_name = 2; // 分组名称
+  repeated ProductAttr attrs = 3; // 销售属性
+}
+
+/*
+ * Product 详情
+ */
+message ProductItem {
+  int64  id = 1; // 数据ID,创建时传0
+  int64  category_id = 2; // 分类ID
+  string name = 3; // 商品名称
+  int64 in_stock = 4; // 库存
+  int64 sales = 5; // 已售数量
+  string cover_url = 6; // 封面图
+  string video_url = 7; // 介绍视频
+  bool is_recommend = 8; // 是否推荐
+  int64 price_fee = 9; // 售价，整数方式保存
+  int64 market_price_fee = 10; // 市场价，整数方式保存
+  int64 custom_label = 11; // 自定义标签
+  string content_type = 12; // 详情类型 容类型:html json
+  string content = 13; // 详情
+  repeated ProductAttr cate_attrs = 14;  // 类目属性
+  repeated ProductAttrGroup sale_group = 15; // 销售属性
+  repeated ProductSku sku = 16; // 销售规格
+  int64 sort = 17; // 排序
+  int64 status = 18; // 状态 1:enable, 0:disable
+}
+
+/*
+ * Product 列表
+ */
+message ProductListResp {
+  repeated ProductItem items = 1; // 列表
+  int64 total = 2;  // 总数
 }

@@ -1,8 +1,8 @@
 
-/**
+/*
  * 通用
  *
- * 这个文件实际上只是一个示例。数据模型完全是虚构的。
+ * 设计中
  */
 syntax = "proto3";
 
@@ -13,12 +13,12 @@ option java_outer_classname = "BaseProto";
 
 package base;
 
-/**
+/*
  * 空返回
  */
 message Empty {}
 
-/**
+/*
  * ListReq 通用列表参数
  */
 message ListReq {
@@ -26,7 +26,7 @@ message ListReq {
   int64 page = 2; // 页码
   int64 limit = 3; // 页数
 }
-/**
+/*
  * IdReq 通用Id参数
  */
 message IdReq {
