@@ -1,13 +1,16 @@
-
 PROTO_DIR=./proto
 DOC_DIR=./docs
 
-all: auth helloworld protodoc-html
+all: auth item helloworld protodoc-html
 
 .PHONY:auth
 auth:
 	@mkdir -p auth
 	@protoc --go_out=auth --go_opt=paths=source_relative --go-grpc_out=auth --go-grpc_opt=paths=source_relative --proto_path=$(PROTO_DIR) auth.proto
+
+item:
+	@mkdir -p item
+	@protoc --go_out=item --go_opt=paths=source_relative --go-grpc_out=item --go-grpc_opt=paths=source_relative --proto_path=$(PROTO_DIR) item.proto
 
 helloworld:
 	@mkdir -p helloworld

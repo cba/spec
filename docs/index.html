@@ -235,6 +235,45 @@
             </ul>
           </li>
         
+          
+          <li>
+            <a href="#item.proto">item.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#item.AppItem"><span class="badge">M</span>AppItem</a>
+                </li>
+              
+                <li>
+                  <a href="#item.AppListResp"><span class="badge">M</span>AppListResp</a>
+                </li>
+              
+                <li>
+                  <a href="#item.AppResetResp"><span class="badge">M</span>AppResetResp</a>
+                </li>
+              
+                <li>
+                  <a href="#item.Empty"><span class="badge">M</span>Empty</a>
+                </li>
+              
+                <li>
+                  <a href="#item.IdReq"><span class="badge">M</span>IdReq</a>
+                </li>
+              
+                <li>
+                  <a href="#item.ListReq"><span class="badge">M</span>ListReq</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#item.Item"><span class="badge">S</span>Item</a>
+                </li>
+              
+            </ul>
+          </li>
+        
         <li><a href="#scalar-value-types">Scalar Value Types</a></li>
       </ul>
     </div>
@@ -579,6 +618,271 @@
                 <td><a href="#helloworld.HelloRequest">HelloRequest</a></td>
                 <td><a href="#helloworld.HelloReply">HelloReply</a></td>
                 <td><p>Sends a greeting</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+      
+      <div class="file-heading">
+        <h2 id="item.proto">item.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p><p>商品中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+
+      
+        <h3 id="item.AppItem">AppItem</h3>
+        <p></p><p>APP详情</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>数据ID,创建时传0 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>identity</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>权限标识 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>APP名 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppKey </p></td>
+                </tr>
+              
+                <tr>
+                  <td>remark</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>备注 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>状态 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>created_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>创建时间 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>updated_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>更新时间 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="item.AppListResp">AppListResp</h3>
+        <p></p><p>APP列表</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>items</td>
+                  <td><a href="#item.AppItem">AppItem</a></td>
+                  <td>repeated</td>
+                  <td><p>列表 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>总数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="item.AppResetResp">AppResetResp</h3>
+        <p></p><p>APP重置返回</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppKey </p></td>
+                </tr>
+              
+                <tr>
+                  <td>secret</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppSecret </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="item.Empty">Empty</h3>
+        <p></p><p>空返回</p>
+
+        
+
+        
+      
+        <h3 id="item.IdReq">IdReq</h3>
+        <p></p><p>IdReq 通用Id参数</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>数据ID </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="item.ListReq">ListReq</h3>
+        <p></p><p>ListReq 通用列表参数</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>cond</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>条件 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>page</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>页码 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>limit</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>页数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="item.Item">Item</h3>
+        <p></p><p>商品中心</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>AppList</td>
+                <td><a href="#item.ListReq">ListReq</a></td>
+                <td><a href="#item.AppListResp">AppListResp</a></td>
+                <td><p>APP列表</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDetail</td>
+                <td><a href="#item.IdReq">IdReq</a></td>
+                <td><a href="#item.AppItem">AppItem</a></td>
+                <td><p>APP详情</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppUpdateOrCreate</td>
+                <td><a href="#item.AppItem">AppItem</a></td>
+                <td><a href="#item.Empty">Empty</a></td>
+                <td><p>APP更新或创建</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDelete</td>
+                <td><a href="#item.IdReq">IdReq</a></td>
+                <td><a href="#item.Empty">Empty</a></td>
+                <td><p>APP删除</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppReset</td>
+                <td><a href="#item.IdReq">IdReq</a></td>
+                <td><a href="#item.AppResetResp">AppResetResp</a></td>
+                <td><p>APP重置Secret</p></td>
               </tr>
             
           </tbody>
