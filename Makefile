@@ -4,7 +4,7 @@ DOC_DIR=./docs
 
 all: proto protodoc-html
 
-.PHONY:
+.PHONY:proto
 proto:
 	$(shell for var in $(PROJECTS); do mkdir -p $${var}; protoc --go_out=$${var} --go_opt=paths=source_relative --go-grpc_out=$${var} --go-grpc_opt=paths=source_relative --proto_path=$(PROTO_DIR) $${var}.proto; done)
 

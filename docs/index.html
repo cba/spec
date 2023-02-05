@@ -225,6 +225,60 @@
         
           
           <li>
+            <a href="#cms.proto">cms.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#cms.AppItem"><span class="badge">M</span>AppItem</a>
+                </li>
+              
+                <li>
+                  <a href="#cms.AppListResp"><span class="badge">M</span>AppListResp</a>
+                </li>
+              
+                <li>
+                  <a href="#cms.AppResetResp"><span class="badge">M</span>AppResetResp</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#cms.cms"><span class="badge">S</span>cms</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#file.proto">file.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#file.AppItem"><span class="badge">M</span>AppItem</a>
+                </li>
+              
+                <li>
+                  <a href="#file.AppListResp"><span class="badge">M</span>AppListResp</a>
+                </li>
+              
+                <li>
+                  <a href="#file.AppResetResp"><span class="badge">M</span>AppResetResp</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#file.file"><span class="badge">S</span>file</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#helloworld.proto">helloworld.proto</a>
             <ul>
               
@@ -248,26 +302,107 @@
         
           
           <li>
-            <a href="#item.proto">item.proto</a>
+            <a href="#order.proto">order.proto</a>
             <ul>
               
                 <li>
-                  <a href="#item.AppItem"><span class="badge">M</span>AppItem</a>
+                  <a href="#order.AppItem"><span class="badge">M</span>AppItem</a>
                 </li>
               
                 <li>
-                  <a href="#item.AppListResp"><span class="badge">M</span>AppListResp</a>
+                  <a href="#order.AppListResp"><span class="badge">M</span>AppListResp</a>
                 </li>
               
                 <li>
-                  <a href="#item.AppResetResp"><span class="badge">M</span>AppResetResp</a>
+                  <a href="#order.AppResetResp"><span class="badge">M</span>AppResetResp</a>
                 </li>
               
               
               
               
                 <li>
-                  <a href="#item.Item"><span class="badge">S</span>Item</a>
+                  <a href="#order.order"><span class="badge">S</span>order</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#pay.proto">pay.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#pay.AppItem"><span class="badge">M</span>AppItem</a>
+                </li>
+              
+                <li>
+                  <a href="#pay.AppListResp"><span class="badge">M</span>AppListResp</a>
+                </li>
+              
+                <li>
+                  <a href="#pay.AppResetResp"><span class="badge">M</span>AppResetResp</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#pay.pay"><span class="badge">S</span>pay</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#product.proto">product.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#product.AppItem"><span class="badge">M</span>AppItem</a>
+                </li>
+              
+                <li>
+                  <a href="#product.AppListResp"><span class="badge">M</span>AppListResp</a>
+                </li>
+              
+                <li>
+                  <a href="#product.AppResetResp"><span class="badge">M</span>AppResetResp</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#product.Product"><span class="badge">S</span>Product</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#user.proto">user.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#user.AppItem"><span class="badge">M</span>AppItem</a>
+                </li>
+              
+                <li>
+                  <a href="#user.AppListResp"><span class="badge">M</span>AppListResp</a>
+                </li>
+              
+                <li>
+                  <a href="#user.AppResetResp"><span class="badge">M</span>AppResetResp</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#user.user"><span class="badge">S</span>user</a>
                 </li>
               
             </ul>
@@ -559,6 +694,398 @@
     
       
       <div class="file-heading">
+        <h2 id="cms.proto">cms.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p><p>内容中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+
+      
+        <h3 id="cms.AppItem">AppItem</h3>
+        <p></p><p>APP详情</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>数据ID,创建时传0 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>identity</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>权限标识 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>APP名 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppKey </p></td>
+                </tr>
+              
+                <tr>
+                  <td>remark</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>备注 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>状态 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>created_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>创建时间 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>updated_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>更新时间 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="cms.AppListResp">AppListResp</h3>
+        <p></p><p>APP列表</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>items</td>
+                  <td><a href="#cms.AppItem">AppItem</a></td>
+                  <td>repeated</td>
+                  <td><p>列表 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>总数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="cms.AppResetResp">AppResetResp</h3>
+        <p></p><p>APP重置返回</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppKey </p></td>
+                </tr>
+              
+                <tr>
+                  <td>secret</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppSecret </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="cms.cms">cms</h3>
+        <p></p><p>商品中心</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>AppList</td>
+                <td><a href="#base.ListReq">.base.ListReq</a></td>
+                <td><a href="#cms.AppListResp">AppListResp</a></td>
+                <td><p>APP列表</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDetail</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#cms.AppItem">AppItem</a></td>
+                <td><p>APP详情</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppUpdateOrCreate</td>
+                <td><a href="#cms.AppItem">AppItem</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>APP更新或创建</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDelete</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>APP删除</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppReset</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#cms.AppResetResp">AppResetResp</a></td>
+                <td><p>APP重置Secret</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+      
+      <div class="file-heading">
+        <h2 id="file.proto">file.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p><p>文件中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+
+      
+        <h3 id="file.AppItem">AppItem</h3>
+        <p></p><p>APP详情</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>数据ID,创建时传0 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>identity</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>权限标识 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>APP名 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppKey </p></td>
+                </tr>
+              
+                <tr>
+                  <td>remark</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>备注 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>状态 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>created_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>创建时间 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>updated_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>更新时间 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="file.AppListResp">AppListResp</h3>
+        <p></p><p>APP列表</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>items</td>
+                  <td><a href="#file.AppItem">AppItem</a></td>
+                  <td>repeated</td>
+                  <td><p>列表 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>总数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="file.AppResetResp">AppResetResp</h3>
+        <p></p><p>APP重置返回</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppKey </p></td>
+                </tr>
+              
+                <tr>
+                  <td>secret</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppSecret </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="file.file">file</h3>
+        <p></p><p>商品中心</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>AppList</td>
+                <td><a href="#base.ListReq">.base.ListReq</a></td>
+                <td><a href="#file.AppListResp">AppListResp</a></td>
+                <td><p>APP列表</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDetail</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#file.AppItem">AppItem</a></td>
+                <td><p>APP详情</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppUpdateOrCreate</td>
+                <td><a href="#file.AppItem">AppItem</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>APP更新或创建</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDelete</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>APP删除</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppReset</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#file.AppResetResp">AppResetResp</a></td>
+                <td><p>APP重置Secret</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+      
+      <div class="file-heading">
         <h2 id="helloworld.proto">helloworld.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
@@ -640,12 +1167,12 @@
     
       
       <div class="file-heading">
-        <h2 id="item.proto">item.proto</h2><a href="#title">Top</a>
+        <h2 id="order.proto">order.proto</h2><a href="#title">Top</a>
       </div>
-      <p></p><p>商品中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+      <p></p><p>订单中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
 
       
-        <h3 id="item.AppItem">AppItem</h3>
+        <h3 id="order.AppItem">AppItem</h3>
         <p></p><p>APP详情</p>
 
         
@@ -718,7 +1245,7 @@
 
         
       
-        <h3 id="item.AppListResp">AppListResp</h3>
+        <h3 id="order.AppListResp">AppListResp</h3>
         <p></p><p>APP列表</p>
 
         
@@ -730,7 +1257,7 @@
               
                 <tr>
                   <td>items</td>
-                  <td><a href="#item.AppItem">AppItem</a></td>
+                  <td><a href="#order.AppItem">AppItem</a></td>
                   <td>repeated</td>
                   <td><p>列表 </p></td>
                 </tr>
@@ -749,7 +1276,7 @@
 
         
       
-        <h3 id="item.AppResetResp">AppResetResp</h3>
+        <h3 id="order.AppResetResp">AppResetResp</h3>
         <p></p><p>APP重置返回</p>
 
         
@@ -786,7 +1313,7 @@
       
 
       
-        <h3 id="item.Item">Item</h3>
+        <h3 id="order.order">order</h3>
         <p></p><p>商品中心</p>
         <table class="enum-table">
           <thead>
@@ -797,20 +1324,20 @@
               <tr>
                 <td>AppList</td>
                 <td><a href="#base.ListReq">.base.ListReq</a></td>
-                <td><a href="#item.AppListResp">AppListResp</a></td>
+                <td><a href="#order.AppListResp">AppListResp</a></td>
                 <td><p>APP列表</p></td>
               </tr>
             
               <tr>
                 <td>AppDetail</td>
                 <td><a href="#base.IdReq">.base.IdReq</a></td>
-                <td><a href="#item.AppItem">AppItem</a></td>
+                <td><a href="#order.AppItem">AppItem</a></td>
                 <td><p>APP详情</p></td>
               </tr>
             
               <tr>
                 <td>AppUpdateOrCreate</td>
-                <td><a href="#item.AppItem">AppItem</a></td>
+                <td><a href="#order.AppItem">AppItem</a></td>
                 <td><a href="#base.Empty">.base.Empty</a></td>
                 <td><p>APP更新或创建</p></td>
               </tr>
@@ -825,7 +1352,595 @@
               <tr>
                 <td>AppReset</td>
                 <td><a href="#base.IdReq">.base.IdReq</a></td>
-                <td><a href="#item.AppResetResp">AppResetResp</a></td>
+                <td><a href="#order.AppResetResp">AppResetResp</a></td>
+                <td><p>APP重置Secret</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+      
+      <div class="file-heading">
+        <h2 id="pay.proto">pay.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p><p>支付中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+
+      
+        <h3 id="pay.AppItem">AppItem</h3>
+        <p></p><p>APP详情</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>数据ID,创建时传0 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>identity</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>权限标识 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>APP名 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppKey </p></td>
+                </tr>
+              
+                <tr>
+                  <td>remark</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>备注 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>状态 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>created_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>创建时间 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>updated_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>更新时间 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="pay.AppListResp">AppListResp</h3>
+        <p></p><p>APP列表</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>items</td>
+                  <td><a href="#pay.AppItem">AppItem</a></td>
+                  <td>repeated</td>
+                  <td><p>列表 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>总数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="pay.AppResetResp">AppResetResp</h3>
+        <p></p><p>APP重置返回</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppKey </p></td>
+                </tr>
+              
+                <tr>
+                  <td>secret</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppSecret </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="pay.pay">pay</h3>
+        <p></p><p>商品中心</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>AppList</td>
+                <td><a href="#base.ListReq">.base.ListReq</a></td>
+                <td><a href="#pay.AppListResp">AppListResp</a></td>
+                <td><p>APP列表</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDetail</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#pay.AppItem">AppItem</a></td>
+                <td><p>APP详情</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppUpdateOrCreate</td>
+                <td><a href="#pay.AppItem">AppItem</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>APP更新或创建</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDelete</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>APP删除</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppReset</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#pay.AppResetResp">AppResetResp</a></td>
+                <td><p>APP重置Secret</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+      
+      <div class="file-heading">
+        <h2 id="product.proto">product.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p><p>商品中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+
+      
+        <h3 id="product.AppItem">AppItem</h3>
+        <p></p><p>APP详情</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>数据ID,创建时传0 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>identity</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>权限标识 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>APP名 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppKey </p></td>
+                </tr>
+              
+                <tr>
+                  <td>remark</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>备注 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>状态 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>created_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>创建时间 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>updated_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>更新时间 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="product.AppListResp">AppListResp</h3>
+        <p></p><p>APP列表</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>items</td>
+                  <td><a href="#product.AppItem">AppItem</a></td>
+                  <td>repeated</td>
+                  <td><p>列表 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>总数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="product.AppResetResp">AppResetResp</h3>
+        <p></p><p>APP重置返回</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppKey </p></td>
+                </tr>
+              
+                <tr>
+                  <td>secret</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppSecret </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="product.Product">Product</h3>
+        <p></p><p>商品中心</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>AppList</td>
+                <td><a href="#base.ListReq">.base.ListReq</a></td>
+                <td><a href="#product.AppListResp">AppListResp</a></td>
+                <td><p>APP列表</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDetail</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#product.AppItem">AppItem</a></td>
+                <td><p>APP详情</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppUpdateOrCreate</td>
+                <td><a href="#product.AppItem">AppItem</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>APP更新或创建</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDelete</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>APP删除</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppReset</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#product.AppResetResp">AppResetResp</a></td>
+                <td><p>APP重置Secret</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+      
+      <div class="file-heading">
+        <h2 id="user.proto">user.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p><p>用户中心</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+
+      
+        <h3 id="user.AppItem">AppItem</h3>
+        <p></p><p>APP详情</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>数据ID,创建时传0 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>identity</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>权限标识 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>APP名 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppKey </p></td>
+                </tr>
+              
+                <tr>
+                  <td>remark</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>备注 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>状态 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>created_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>创建时间 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>updated_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>更新时间 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="user.AppListResp">AppListResp</h3>
+        <p></p><p>APP列表</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>items</td>
+                  <td><a href="#user.AppItem">AppItem</a></td>
+                  <td>repeated</td>
+                  <td><p>列表 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>总数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="user.AppResetResp">AppResetResp</h3>
+        <p></p><p>APP重置返回</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppKey </p></td>
+                </tr>
+              
+                <tr>
+                  <td>secret</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>AppSecret </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="user.user">user</h3>
+        <p></p><p>商品中心</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>AppList</td>
+                <td><a href="#base.ListReq">.base.ListReq</a></td>
+                <td><a href="#user.AppListResp">AppListResp</a></td>
+                <td><p>APP列表</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDetail</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#user.AppItem">AppItem</a></td>
+                <td><p>APP详情</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppUpdateOrCreate</td>
+                <td><a href="#user.AppItem">AppItem</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>APP更新或创建</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDelete</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>APP删除</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppReset</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#user.AppResetResp">AppResetResp</a></td>
                 <td><p>APP重置Secret</p></td>
               </tr>
             
