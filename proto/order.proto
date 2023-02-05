@@ -1,23 +1,24 @@
+
 /**
- * 商品中心
+ * 订单中心
  *
  * 这个文件实际上只是一个示例。数据模型完全是虚构的。
  */
 syntax = "proto3";
 
-option go_package = "github.com/cba/spec/item";
+option go_package = "github.com/cba/spec/order";
 option java_multiple_files = true;
-option java_package = "io.github.cba.item";
-option java_outer_classname = "ItemProto";
+option java_package = "io.github.cba.order";
+option java_outer_classname = "orderProto";
 
-package item;
+package order;
 
 import "base.proto";
 
 /**
  * 商品中心
  */
-service Item {
+service order {
   // APP列表
   rpc AppList (base.ListReq) returns (AppListResp) {}
   // APP详情

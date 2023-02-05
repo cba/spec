@@ -1,16 +1,25 @@
+PROJECTS=auth cms file helloworld order pay product user
 PROTO_DIR=./proto
 DOC_DIR=./docs
 
-all: auth item helloworld protodoc-html
+all: proto protodoc-html
+
+.PHONY:
+proto:
+	$(shell for var in $(PROJECTS); do mkdir -p $${var}; protoc --go_out=$${var} --go_opt=paths=source_relative --go-grpc_out=$${var} --go-grpc_opt=paths=source_relative --proto_path=$(PROTO_DIR) $${var}.proto; done)
 
 .PHONY:auth
 auth:
 	@mkdir -p auth
 	@protoc --go_out=auth --go_opt=paths=source_relative --go-grpc_out=auth --go-grpc_opt=paths=source_relative --proto_path=$(PROTO_DIR) auth.proto
 
-item:
-	@mkdir -p item
-	@protoc --go_out=item --go_opt=paths=source_relative --go-grpc_out=item --go-grpc_opt=paths=source_relative --proto_path=$(PROTO_DIR) item.proto
+product:
+	@mkdir -p product
+	@protoc --go_out=product --go_opt=paths=source_relative --go-grpc_out=product --go-grpc_opt=paths=source_relative --proto_path=$(PROTO_DIR) product.proto
+
+pay:
+	@mkdir -p pay
+	@protoc --go_out=pay --go_opt=paths=source_relative --go-grpc_out=pay --go-grpc_opt=paths=source_relative --proto_path=$(PROTO_DIR) pay.proto
 
 helloworld:
 	@mkdir -p helloworld

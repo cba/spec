@@ -1,0 +1,62 @@
+
+/**
+ * 文件中心
+ *
+ * 这个文件实际上只是一个示例。数据模型完全是虚构的。
+ */
+syntax = "proto3";
+
+option go_package = "github.com/cba/spec/file";
+option java_multiple_files = true;
+option java_package = "io.github.cba.file";
+option java_outer_classname = "fileProto";
+
+package file;
+
+import "base.proto";
+
+/**
+ * 商品中心
+ */
+service file {
+  // APP列表
+  rpc AppList (base.ListReq) returns (AppListResp) {}
+  // APP详情
+  rpc AppDetail (base.IdReq) returns (AppItem) {}
+  // APP更新或创建
+  rpc AppUpdateOrCreate (AppItem) returns (base.Empty) {}
+  // APP删除
+  rpc AppDelete (base.IdReq) returns (base.Empty) {}
+  // APP重置Secret
+  rpc AppReset (base.IdReq) returns (AppResetResp) {}
+}
+
+/**
+ * APP详情
+ */
+message AppItem {
+  int64  id = 1; // 数据ID,创建时传0
+  string identity = 2; // 权限标识
+  string name = 3; // APP名
+  string key = 4; // AppKey
+  string remark = 5; // 备注
+  int64 status = 6; // 状态
+  string created_at = 7; // 创建时间
+  string updated_at = 8; // 更新时间
+}
+
+/**
+ * APP列表
+ */
+message AppListResp {
+  repeated AppItem items = 1; // 列表
+  int64 total = 2;  // 总数
+}
+
+/**
+ * APP重置返回
+ */
+message AppResetResp{
+  string key = 1; // AppKey
+  string secret = 2; // AppSecret
+}
