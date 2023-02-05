@@ -12,40 +12,22 @@ option java_outer_classname = "ItemProto";
 
 package item;
 
+import "base.proto";
+
 /**
  * 商品中心
  */
 service Item {
   // APP列表
-  rpc AppList (ListReq) returns (AppListResp) {}
+  rpc AppList (base.ListReq) returns (AppListResp) {}
   // APP详情
-  rpc AppDetail (IdReq) returns (AppItem) {}
+  rpc AppDetail (base.IdReq) returns (AppItem) {}
   // APP更新或创建
-  rpc AppUpdateOrCreate (AppItem) returns (Empty) {}
+  rpc AppUpdateOrCreate (AppItem) returns (base.Empty) {}
   // APP删除
-  rpc AppDelete (IdReq) returns (Empty) {}
+  rpc AppDelete (base.IdReq) returns (base.Empty) {}
   // APP重置Secret
-  rpc AppReset (IdReq) returns (AppResetResp) {}
-}
-
-/**
- * 空返回
- */
-message Empty {}
-
-/**
- * ListReq 通用列表参数
- */
-message ListReq {
-  string cond = 1; // 条件
-  int64 page = 2; // 页码
-  int64 limit = 3; // 页数
-}
-/**
- * IdReq 通用Id参数
- */
-message IdReq {
-  int64 id = 1; // 数据ID
+  rpc AppReset (base.IdReq) returns (AppResetResp) {}
 }
 
 /**

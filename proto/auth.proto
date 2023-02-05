@@ -1,16 +1,3 @@
-// Copyright 2015 gRPC authors.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
 /**
  * 授权中心
  *
@@ -25,40 +12,22 @@ option java_outer_classname = "AuthProto";
 
 package auth;
 
+import "base.proto";
+
 /**
  * 授权中心
  */
 service Auth {
   // APP列表
-  rpc AppList (ListReq) returns (AppListResp) {}
+  rpc AppList (base.ListReq) returns (AppListResp) {}
   // APP详情
-  rpc AppDetail (IdReq) returns (AppItem) {}
+  rpc AppDetail (base.IdReq) returns (AppItem) {}
   // APP更新或创建
-  rpc AppUpdateOrCreate (AppItem) returns (Empty) {}
+  rpc AppUpdateOrCreate (AppItem) returns (base.Empty) {}
   // APP删除
-  rpc AppDelete (IdReq) returns (Empty) {}
+  rpc AppDelete (base.IdReq) returns (base.Empty) {}
   // APP重置Secret
-  rpc AppReset (IdReq) returns (AppResetResp) {}
-}
-
-/**
- * 空返回
- */
-message Empty {}
-
-/**
- * ListReq 通用列表参数
- */
-message ListReq {
-  string cond = 1; // 条件
-  int64 page = 2; // 页码
-  int64 limit = 3; // 页数
-}
-/**
- * IdReq 通用Id参数
- */
-message IdReq {
-  int64 id = 1; // 数据ID
+  rpc AppReset (base.IdReq) returns (AppResetResp) {}
 }
 
 /**

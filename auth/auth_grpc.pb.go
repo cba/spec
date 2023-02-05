@@ -8,6 +8,7 @@ package auth
 
 import (
 	context "context"
+	base "github.com/cba/spec/base"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -23,15 +24,15 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AuthClient interface {
 	// APP列表
-	AppList(ctx context.Context, in *ListReq, opts ...grpc.CallOption) (*AppListResp, error)
+	AppList(ctx context.Context, in *base.ListReq, opts ...grpc.CallOption) (*AppListResp, error)
 	// APP详情
-	AppDetail(ctx context.Context, in *IdReq, opts ...grpc.CallOption) (*AppItem, error)
+	AppDetail(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*AppItem, error)
 	// APP更新或创建
-	AppUpdateOrCreate(ctx context.Context, in *AppItem, opts ...grpc.CallOption) (*Empty, error)
+	AppUpdateOrCreate(ctx context.Context, in *AppItem, opts ...grpc.CallOption) (*base.Empty, error)
 	// APP删除
-	AppDelete(ctx context.Context, in *IdReq, opts ...grpc.CallOption) (*Empty, error)
+	AppDelete(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*base.Empty, error)
 	// APP重置Secret
-	AppReset(ctx context.Context, in *IdReq, opts ...grpc.CallOption) (*AppResetResp, error)
+	AppReset(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*AppResetResp, error)
 }
 
 type authClient struct {
@@ -42,7 +43,7 @@ func NewAuthClient(cc grpc.ClientConnInterface) AuthClient {
 	return &authClient{cc}
 }
 
-func (c *authClient) AppList(ctx context.Context, in *ListReq, opts ...grpc.CallOption) (*AppListResp, error) {
+func (c *authClient) AppList(ctx context.Context, in *base.ListReq, opts ...grpc.CallOption) (*AppListResp, error) {
 	out := new(AppListResp)
 	err := c.cc.Invoke(ctx, "/auth.Auth/AppList", in, out, opts...)
 	if err != nil {
@@ -51,7 +52,7 @@ func (c *authClient) AppList(ctx context.Context, in *ListReq, opts ...grpc.Call
 	return out, nil
 }
 
-func (c *authClient) AppDetail(ctx context.Context, in *IdReq, opts ...grpc.CallOption) (*AppItem, error) {
+func (c *authClient) AppDetail(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*AppItem, error) {
 	out := new(AppItem)
 	err := c.cc.Invoke(ctx, "/auth.Auth/AppDetail", in, out, opts...)
 	if err != nil {
@@ -60,8 +61,8 @@ func (c *authClient) AppDetail(ctx context.Context, in *IdReq, opts ...grpc.Call
 	return out, nil
 }
 
-func (c *authClient) AppUpdateOrCreate(ctx context.Context, in *AppItem, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *authClient) AppUpdateOrCreate(ctx context.Context, in *AppItem, opts ...grpc.CallOption) (*base.Empty, error) {
+	out := new(base.Empty)
 	err := c.cc.Invoke(ctx, "/auth.Auth/AppUpdateOrCreate", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -69,8 +70,8 @@ func (c *authClient) AppUpdateOrCreate(ctx context.Context, in *AppItem, opts ..
 	return out, nil
 }
 
-func (c *authClient) AppDelete(ctx context.Context, in *IdReq, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *authClient) AppDelete(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*base.Empty, error) {
+	out := new(base.Empty)
 	err := c.cc.Invoke(ctx, "/auth.Auth/AppDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -78,7 +79,7 @@ func (c *authClient) AppDelete(ctx context.Context, in *IdReq, opts ...grpc.Call
 	return out, nil
 }
 
-func (c *authClient) AppReset(ctx context.Context, in *IdReq, opts ...grpc.CallOption) (*AppResetResp, error) {
+func (c *authClient) AppReset(ctx context.Context, in *base.IdReq, opts ...grpc.CallOption) (*AppResetResp, error) {
 	out := new(AppResetResp)
 	err := c.cc.Invoke(ctx, "/auth.Auth/AppReset", in, out, opts...)
 	if err != nil {
@@ -92,15 +93,15 @@ func (c *authClient) AppReset(ctx context.Context, in *IdReq, opts ...grpc.CallO
 // for forward compatibility
 type AuthServer interface {
 	// APP列表
-	AppList(context.Context, *ListReq) (*AppListResp, error)
+	AppList(context.Context, *base.ListReq) (*AppListResp, error)
 	// APP详情
-	AppDetail(context.Context, *IdReq) (*AppItem, error)
+	AppDetail(context.Context, *base.IdReq) (*AppItem, error)
 	// APP更新或创建
-	AppUpdateOrCreate(context.Context, *AppItem) (*Empty, error)
+	AppUpdateOrCreate(context.Context, *AppItem) (*base.Empty, error)
 	// APP删除
-	AppDelete(context.Context, *IdReq) (*Empty, error)
+	AppDelete(context.Context, *base.IdReq) (*base.Empty, error)
 	// APP重置Secret
-	AppReset(context.Context, *IdReq) (*AppResetResp, error)
+	AppReset(context.Context, *base.IdReq) (*AppResetResp, error)
 	mustEmbedUnimplementedAuthServer()
 }
 
@@ -108,19 +109,19 @@ type AuthServer interface {
 type UnimplementedAuthServer struct {
 }
 
-func (UnimplementedAuthServer) AppList(context.Context, *ListReq) (*AppListResp, error) {
+func (UnimplementedAuthServer) AppList(context.Context, *base.ListReq) (*AppListResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AppList not implemented")
 }
-func (UnimplementedAuthServer) AppDetail(context.Context, *IdReq) (*AppItem, error) {
+func (UnimplementedAuthServer) AppDetail(context.Context, *base.IdReq) (*AppItem, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AppDetail not implemented")
 }
-func (UnimplementedAuthServer) AppUpdateOrCreate(context.Context, *AppItem) (*Empty, error) {
+func (UnimplementedAuthServer) AppUpdateOrCreate(context.Context, *AppItem) (*base.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AppUpdateOrCreate not implemented")
 }
-func (UnimplementedAuthServer) AppDelete(context.Context, *IdReq) (*Empty, error) {
+func (UnimplementedAuthServer) AppDelete(context.Context, *base.IdReq) (*base.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AppDelete not implemented")
 }
-func (UnimplementedAuthServer) AppReset(context.Context, *IdReq) (*AppResetResp, error) {
+func (UnimplementedAuthServer) AppReset(context.Context, *base.IdReq) (*AppResetResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AppReset not implemented")
 }
 func (UnimplementedAuthServer) mustEmbedUnimplementedAuthServer() {}
@@ -137,7 +138,7 @@ func RegisterAuthServer(s grpc.ServiceRegistrar, srv AuthServer) {
 }
 
 func _Auth_AppList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListReq)
+	in := new(base.ListReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -149,13 +150,13 @@ func _Auth_AppList_Handler(srv interface{}, ctx context.Context, dec func(interf
 		FullMethod: "/auth.Auth/AppList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServer).AppList(ctx, req.(*ListReq))
+		return srv.(AuthServer).AppList(ctx, req.(*base.ListReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Auth_AppDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IdReq)
+	in := new(base.IdReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -167,7 +168,7 @@ func _Auth_AppDetail_Handler(srv interface{}, ctx context.Context, dec func(inte
 		FullMethod: "/auth.Auth/AppDetail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServer).AppDetail(ctx, req.(*IdReq))
+		return srv.(AuthServer).AppDetail(ctx, req.(*base.IdReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -191,7 +192,7 @@ func _Auth_AppUpdateOrCreate_Handler(srv interface{}, ctx context.Context, dec f
 }
 
 func _Auth_AppDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IdReq)
+	in := new(base.IdReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -203,13 +204,13 @@ func _Auth_AppDelete_Handler(srv interface{}, ctx context.Context, dec func(inte
 		FullMethod: "/auth.Auth/AppDelete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServer).AppDelete(ctx, req.(*IdReq))
+		return srv.(AuthServer).AppDelete(ctx, req.(*base.IdReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Auth_AppReset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IdReq)
+	in := new(base.IdReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -221,7 +222,7 @@ func _Auth_AppReset_Handler(srv interface{}, ctx context.Context, dec func(inter
 		FullMethod: "/auth.Auth/AppReset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServer).AppReset(ctx, req.(*IdReq))
+		return srv.(AuthServer).AppReset(ctx, req.(*base.IdReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }

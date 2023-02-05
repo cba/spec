@@ -190,24 +190,35 @@
                   <a href="#auth.AppResetResp"><span class="badge">M</span>AppResetResp</a>
                 </li>
               
-                <li>
-                  <a href="#auth.Empty"><span class="badge">M</span>Empty</a>
-                </li>
-              
-                <li>
-                  <a href="#auth.IdReq"><span class="badge">M</span>IdReq</a>
-                </li>
-              
-                <li>
-                  <a href="#auth.ListReq"><span class="badge">M</span>ListReq</a>
-                </li>
-              
               
               
               
                 <li>
                   <a href="#auth.Auth"><span class="badge">S</span>Auth</a>
                 </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#base.proto">base.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#base.Empty"><span class="badge">M</span>Empty</a>
+                </li>
+              
+                <li>
+                  <a href="#base.IdReq"><span class="badge">M</span>IdReq</a>
+                </li>
+              
+                <li>
+                  <a href="#base.ListReq"><span class="badge">M</span>ListReq</a>
+                </li>
+              
+              
+              
               
             </ul>
           </li>
@@ -250,18 +261,6 @@
               
                 <li>
                   <a href="#item.AppResetResp"><span class="badge">M</span>AppResetResp</a>
-                </li>
-              
-                <li>
-                  <a href="#item.Empty"><span class="badge">M</span>Empty</a>
-                </li>
-              
-                <li>
-                  <a href="#item.IdReq"><span class="badge">M</span>IdReq</a>
-                </li>
-              
-                <li>
-                  <a href="#item.ListReq"><span class="badge">M</span>ListReq</a>
                 </li>
               
               
@@ -421,14 +420,75 @@
 
         
       
-        <h3 id="auth.Empty">Empty</h3>
+
+      
+
+      
+
+      
+        <h3 id="auth.Auth">Auth</h3>
+        <p></p><p>授权中心</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>AppList</td>
+                <td><a href="#base.ListReq">.base.ListReq</a></td>
+                <td><a href="#auth.AppListResp">AppListResp</a></td>
+                <td><p>APP列表</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDetail</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#auth.AppItem">AppItem</a></td>
+                <td><p>APP详情</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppUpdateOrCreate</td>
+                <td><a href="#auth.AppItem">AppItem</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>APP更新或创建</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppDelete</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
+                <td><p>APP删除</p></td>
+              </tr>
+            
+              <tr>
+                <td>AppReset</td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#auth.AppResetResp">AppResetResp</a></td>
+                <td><p>APP重置Secret</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+      
+      <div class="file-heading">
+        <h2 id="base.proto">base.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p><p>通用</p><p>这个文件实际上只是一个示例。数据模型完全是虚构的。</p>
+
+      
+        <h3 id="base.Empty">Empty</h3>
         <p></p><p>空返回</p>
 
         
 
         
       
-        <h3 id="auth.IdReq">IdReq</h3>
+        <h3 id="base.IdReq">IdReq</h3>
         <p></p><p>IdReq 通用Id参数</p>
 
         
@@ -452,7 +512,7 @@
 
         
       
-        <h3 id="auth.ListReq">ListReq</h3>
+        <h3 id="base.ListReq">ListReq</h3>
         <p></p><p>ListReq 通用列表参数</p>
 
         
@@ -496,53 +556,6 @@
       
 
       
-        <h3 id="auth.Auth">Auth</h3>
-        <p></p><p>授权中心</p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>AppList</td>
-                <td><a href="#auth.ListReq">ListReq</a></td>
-                <td><a href="#auth.AppListResp">AppListResp</a></td>
-                <td><p>APP列表</p></td>
-              </tr>
-            
-              <tr>
-                <td>AppDetail</td>
-                <td><a href="#auth.IdReq">IdReq</a></td>
-                <td><a href="#auth.AppItem">AppItem</a></td>
-                <td><p>APP详情</p></td>
-              </tr>
-            
-              <tr>
-                <td>AppUpdateOrCreate</td>
-                <td><a href="#auth.AppItem">AppItem</a></td>
-                <td><a href="#auth.Empty">Empty</a></td>
-                <td><p>APP更新或创建</p></td>
-              </tr>
-            
-              <tr>
-                <td>AppDelete</td>
-                <td><a href="#auth.IdReq">IdReq</a></td>
-                <td><a href="#auth.Empty">Empty</a></td>
-                <td><p>APP删除</p></td>
-              </tr>
-            
-              <tr>
-                <td>AppReset</td>
-                <td><a href="#auth.IdReq">IdReq</a></td>
-                <td><a href="#auth.AppResetResp">AppResetResp</a></td>
-                <td><p>APP重置Secret</p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-
-        
     
       
       <div class="file-heading">
@@ -767,75 +780,6 @@
 
         
       
-        <h3 id="item.Empty">Empty</h3>
-        <p></p><p>空返回</p>
-
-        
-
-        
-      
-        <h3 id="item.IdReq">IdReq</h3>
-        <p></p><p>IdReq 通用Id参数</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>id</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>数据ID </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="item.ListReq">ListReq</h3>
-        <p></p><p>ListReq 通用列表参数</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>cond</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>条件 </p></td>
-                </tr>
-              
-                <tr>
-                  <td>page</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>页码 </p></td>
-                </tr>
-              
-                <tr>
-                  <td>limit</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>页数 </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
 
       
 
@@ -852,14 +796,14 @@
             
               <tr>
                 <td>AppList</td>
-                <td><a href="#item.ListReq">ListReq</a></td>
+                <td><a href="#base.ListReq">.base.ListReq</a></td>
                 <td><a href="#item.AppListResp">AppListResp</a></td>
                 <td><p>APP列表</p></td>
               </tr>
             
               <tr>
                 <td>AppDetail</td>
-                <td><a href="#item.IdReq">IdReq</a></td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
                 <td><a href="#item.AppItem">AppItem</a></td>
                 <td><p>APP详情</p></td>
               </tr>
@@ -867,20 +811,20 @@
               <tr>
                 <td>AppUpdateOrCreate</td>
                 <td><a href="#item.AppItem">AppItem</a></td>
-                <td><a href="#item.Empty">Empty</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
                 <td><p>APP更新或创建</p></td>
               </tr>
             
               <tr>
                 <td>AppDelete</td>
-                <td><a href="#item.IdReq">IdReq</a></td>
-                <td><a href="#item.Empty">Empty</a></td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
+                <td><a href="#base.Empty">.base.Empty</a></td>
                 <td><p>APP删除</p></td>
               </tr>
             
               <tr>
                 <td>AppReset</td>
-                <td><a href="#item.IdReq">IdReq</a></td>
+                <td><a href="#base.IdReq">.base.IdReq</a></td>
                 <td><a href="#item.AppResetResp">AppResetResp</a></td>
                 <td><p>APP重置Secret</p></td>
               </tr>
