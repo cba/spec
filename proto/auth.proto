@@ -1,0 +1,92 @@
+// Copyright 2015 gRPC authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+/**
+ * 授权中心
+ *
+ * 这个文件实际上只是一个示例。数据模型完全是虚构的。
+ */
+syntax = "proto3";
+
+option go_package = "github.com/cba/spec/auth";
+option java_multiple_files = true;
+option java_package = "io.github.cba.auth";
+option java_outer_classname = "AuthProto";
+
+package auth;
+
+/**
+ * 授权中心
+ */
+service Auth {
+  // APP列表
+  rpc AppList (ListReq) returns (AppListResp) {}
+  // APP详情
+  rpc AppDetail (IdReq) returns (AppItem) {}
+  // APP更新或创建
+  rpc AppUpdateOrCreate (AppItem) returns (Empty) {}
+  // APP删除
+  rpc AppDelete (IdReq) returns (Empty) {}
+  // APP重置Secret
+  rpc AppReset (IdReq) returns (AppResetResp) {}
+}
+
+/**
+ * 空返回
+ */
+message Empty {}
+
+/**
+ * ListReq 通用列表参数
+ */
+message ListReq {
+  string cond = 1; // 条件
+  int64 page = 2; // 页码
+  int64 limit = 3; // 页数
+}
+/**
+ * IdReq 通用Id参数
+ */
+message IdReq {
+  int64 id = 1; // 数据ID
+}
+
+/**
+ * APP详情
+ */
+message AppItem {
+  int64  id = 1; // 数据ID,创建时传0
+  string identity = 2; // 权限标识
+  string name = 3; // APP名
+  string key = 4; // AppKey
+  string remark = 5; // 备注
+  int64 status = 6; // 状态
+  string created_at = 7; // 创建时间
+  string updated_at = 8; // 更新时间
+}
+
+/**
+ * APP列表
+ */
+message AppListResp {
+  repeated AppItem items = 1; // 列表
+  int64 total = 2;  // 总数
+}
+
+/**
+ * APP重置返回
+ */
+message AppResetResp{
+  string key = 1; // AppKey
+  string secret = 2; // AppSecret
+}
