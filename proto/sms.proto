@@ -5,7 +5,7 @@
  */
 syntax = "proto3";
 
-option go_package = "github.com/cba/spec/sms";
+option go_package = "github.com/cba/spec/go/sms";
 option java_multiple_files = true;
 option java_package = "io.github.cba.sms";
 option java_outer_classname = "smsProto";

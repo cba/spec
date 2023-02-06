@@ -5,7 +5,7 @@
  */
 syntax = "proto3";
 
-option go_package = "github.com/cba/spec/product";
+option go_package = "github.com/cba/spec/go/product";
 option java_multiple_files = true;
 option java_package = "io.github.cba.product";
 option java_outer_classname = "ProductProto";
