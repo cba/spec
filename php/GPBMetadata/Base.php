@@ -16,7 +16,7 @@ class Base
         }
         $pool->internalAddGeneratedFile(
             '
-«
+…
 
 base.protobase"
 Empty"4
@@ -26,8 +26,13 @@ base.protobase"
 limit ("
 IdReq
 
-id (B;
-io.github.cba.baseB	BaseProtoPZgithub.com/cba/spec/basebproto3'
+id ("U
+Map!
+data (2.base.Map.DataEntry+
+	DataEntry
+key (	
+value (	:8B>
+io.github.cba.baseB	BaseProtoPZgithub.com/cba/spec/go/basebproto3'
         , true);
 
         static::$is_initialized = true;

@@ -217,6 +217,14 @@
                   <a href="#base.ListReq"><span class="badge">M</span>ListReq</a>
                 </li>
               
+                <li>
+                  <a href="#base.Map"><span class="badge">M</span>Map</a>
+                </li>
+              
+                <li>
+                  <a href="#base.Map.DataEntry"><span class="badge">M</span>Map.DataEntry</a>
+                </li>
+              
               
               
               
@@ -310,15 +318,23 @@
             <ul>
               
                 <li>
-                  <a href="#pay.AppItem"><span class="badge">M</span>AppItem</a>
+                  <a href="#pay.GenResp"><span class="badge">M</span>GenResp</a>
                 </li>
               
                 <li>
-                  <a href="#pay.AppListResp"><span class="badge">M</span>AppListResp</a>
+                  <a href="#pay.OrderGenReq"><span class="badge">M</span>OrderGenReq</a>
                 </li>
               
                 <li>
-                  <a href="#pay.AppResetResp"><span class="badge">M</span>AppResetResp</a>
+                  <a href="#pay.PaymentInfoReq"><span class="badge">M</span>PaymentInfoReq</a>
+                </li>
+              
+                <li>
+                  <a href="#pay.RefundReq"><span class="badge">M</span>RefundReq</a>
+                </li>
+              
+                <li>
+                  <a href="#pay.payType"><span class="badge">M</span>payType</a>
                 </li>
               
               
@@ -712,6 +728,61 @@
                   <td><a href="#int64">int64</a></td>
                   <td></td>
                   <td><p>页数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="base.Map">Map</h3>
+        <p>Map 通用</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>data</td>
+                  <td><a href="#base.Map.DataEntry">Map.DataEntry</a></td>
+                  <td>repeated</td>
+                  <td><p>数据 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="base.Map.DataEntry">Map.DataEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
                 </tr>
               
             </tbody>
@@ -1323,8 +1394,216 @@
       <p>支付中心</p><p>设计中</p>
 
       
-        <h3 id="pay.AppItem">AppItem</h3>
-        <p>APP详情</p>
+        <h3 id="pay.GenResp">GenResp</h3>
+        <p>生成支付单返回值</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>payment_no</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>支付单号 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>order_no</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>订单号 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pay_type</td>
+                  <td><a href="#pay.payType">payType</a></td>
+                  <td>repeated</td>
+                  <td><p>支持的支付方式列表 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="pay.OrderGenReq">OrderGenReq</h3>
+        <p>生成支付单</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>uid</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>用户ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>order_no</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>订单编号 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>title</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>订单标题 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>price</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>支付价格 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>notify_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>通知链接 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>remarks</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>订单备注 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>timestamp</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>时间戳 秒 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sign</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>签名 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="pay.PaymentInfoReq">PaymentInfoReq</h3>
+        <p>支付信息</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>payment_no</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>支付单号 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pay_type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>支付方式 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pay_password</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>支付密码 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="pay.RefundReq">RefundReq</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>payment_no</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>支付单号 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>order_no</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>订单号 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>refund_price</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>退款金额 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>remarks</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>备注 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>timestamp</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>时间戳 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sign</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>签名 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="pay.payType">payType</h3>
+        <p>支付方式</p>
 
         
           <table class="field-table">
@@ -1335,34 +1614,41 @@
               
                 <tr>
                   <td>id</td>
-                  <td><a href="#int64">int64</a></td>
+                  <td><a href="#uint64">uint64</a></td>
                   <td></td>
-                  <td><p>数据ID,创建时传0 </p></td>
-                </tr>
-              
-                <tr>
-                  <td>identity</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>权限标识 </p></td>
+                  <td><p>数据ID </p></td>
                 </tr>
               
                 <tr>
                   <td>name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>APP名 </p></td>
+                  <td><p>名称 </p></td>
                 </tr>
               
                 <tr>
-                  <td>key</td>
+                  <td>tag</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>AppKey </p></td>
+                  <td><p>标识 </p></td>
                 </tr>
               
                 <tr>
-                  <td>remark</td>
+                  <td>icon</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>图标 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sort</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>排序 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>remarks</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>备注 </p></td>
@@ -1370,85 +1656,9 @@
               
                 <tr>
                   <td>status</td>
-                  <td><a href="#int64">int64</a></td>
+                  <td><a href="#uint64">uint64</a></td>
                   <td></td>
                   <td><p>状态 </p></td>
-                </tr>
-              
-                <tr>
-                  <td>created_at</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>创建时间 </p></td>
-                </tr>
-              
-                <tr>
-                  <td>updated_at</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>更新时间 </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="pay.AppListResp">AppListResp</h3>
-        <p>APP列表</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>items</td>
-                  <td><a href="#pay.AppItem">AppItem</a></td>
-                  <td>repeated</td>
-                  <td><p>列表 </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>总数 </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="pay.AppResetResp">AppResetResp</h3>
-        <p>APP重置返回</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>key</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>AppKey </p></td>
-                </tr>
-              
-                <tr>
-                  <td>secret</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>AppSecret </p></td>
                 </tr>
               
             </tbody>
@@ -1473,38 +1683,24 @@
           <tbody>
             
               <tr>
-                <td>AppList</td>
-                <td><a href="#base.ListReq">.base.ListReq</a></td>
-                <td><a href="#pay.AppListResp">AppListResp</a></td>
-                <td><p>APP列表</p></td>
+                <td>Gen</td>
+                <td><a href="#pay.OrderGenReq">OrderGenReq</a></td>
+                <td><a href="#pay.GenResp">GenResp</a></td>
+                <td><p>生成订单信息</p></td>
               </tr>
             
               <tr>
-                <td>AppDetail</td>
-                <td><a href="#base.IdReq">.base.IdReq</a></td>
-                <td><a href="#pay.AppItem">AppItem</a></td>
-                <td><p>APP详情</p></td>
+                <td>PaymentInfo</td>
+                <td><a href="#pay.PaymentInfoReq">PaymentInfoReq</a></td>
+                <td><a href="#base.Map">.base.Map</a></td>
+                <td><p>获取支付参数</p></td>
               </tr>
             
               <tr>
-                <td>AppUpdateOrCreate</td>
-                <td><a href="#pay.AppItem">AppItem</a></td>
+                <td>Refund</td>
+                <td><a href="#pay.RefundReq">RefundReq</a></td>
                 <td><a href="#base.Empty">.base.Empty</a></td>
-                <td><p>APP更新或创建</p></td>
-              </tr>
-            
-              <tr>
-                <td>AppDelete</td>
-                <td><a href="#base.IdReq">.base.IdReq</a></td>
-                <td><a href="#base.Empty">.base.Empty</a></td>
-                <td><p>APP删除</p></td>
-              </tr>
-            
-              <tr>
-                <td>AppReset</td>
-                <td><a href="#base.IdReq">.base.IdReq</a></td>
-                <td><a href="#pay.AppResetResp">AppResetResp</a></td>
-                <td><p>APP重置Secret</p></td>
+                <td><p>申请退款</p></td>
               </tr>
             
           </tbody>

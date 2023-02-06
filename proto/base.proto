@@ -32,3 +32,10 @@ message ListReq {
 message IdReq {
   int64 id = 1; // 数据ID
 }
+
+/*
+ * Map 通用
+ */
+message Map {
+  map<string, string> data = 1; //数据
+}

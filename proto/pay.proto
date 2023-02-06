@@ -18,44 +18,64 @@ import "base.proto";
  * 商品中心
  */
 service pay {
-  // APP列表
-  rpc AppList (base.ListReq) returns (AppListResp) {}
-  // APP详情
-  rpc AppDetail (base.IdReq) returns (AppItem) {}
-  // APP更新或创建
-  rpc AppUpdateOrCreate (AppItem) returns (base.Empty) {}
-  // APP删除
-  rpc AppDelete (base.IdReq) returns (base.Empty) {}
-  // APP重置Secret
-  rpc AppReset (base.IdReq) returns (AppResetResp) {}
+  // 生成订单信息
+  rpc Gen (OrderGenReq) returns (GenResp) {}
+  // 获取支付参数
+  rpc PaymentInfo (PaymentInfoReq) returns (base.Map) {}
+  // 申请退款
+  rpc Refund (RefundReq) returns (base.Empty) {}
 }
 
 /*
- * APP详情
+ * 生成支付单
  */
-message AppItem {
-  int64  id = 1; // 数据ID,创建时传0
-  string identity = 2; // 权限标识
-  string name = 3; // APP名
-  string key = 4; // AppKey
-  string remark = 5; // 备注
-  int64 status = 6; // 状态
-  string created_at = 7; // 创建时间
-  string updated_at = 8; // 更新时间
+message OrderGenReq {
+  string uid = 1; // 用户ID
+  string order_no = 2; // 订单编号
+  string title = 3;  // 订单标题
+  uint64 price = 4; // 支付价格
+  string notify_url = 5; // 通知链接
+  string remarks = 6; // 订单备注
+  uint64 timestamp = 7;  // 时间戳 秒
+  string sign = 8; // 签名
 }
 
 /*
- * APP列表
+ * 生成支付单返回值
  */
-message AppListResp {
-  repeated AppItem items = 1; // 列表
-  int64 total = 2;  // 总数
+message GenResp {
+  string payment_no = 1; // 支付单号
+  string order_no = 2; // 订单号
+  repeated payType pay_type = 3; // 支持的支付方式列表
 }
 
 /*
- * APP重置返回
+ * 支付方式
  */
-message AppResetResp{
-  string key = 1; // AppKey
-  string secret = 2; // AppSecret
+message payType {
+  uint64 id = 1; // 数据ID
+  string name = 2; // 名称
+  string tag = 3; // 标识
+  string icon = 4; // 图标
+  uint64 sort = 5; // 排序
+  string remarks = 6; // 备注
+  uint64 status = 7; // 状态
+}
+
+/*
+ * 支付信息
+ */
+message PaymentInfoReq{
+  string payment_no = 1; // 支付单号
+  string pay_type = 2; // 支付方式
+  string pay_password = 3; // 支付密码
+}
+
+message RefundReq{
+  string payment_no = 1; // 支付单号
+  string order_no = 2; // 订单号
+  string refund_price = 3; // 退款金额
+  string remarks = 4; // 备注
+  uint64 timestamp = 5; // 时间戳
+  uint64 sign = 6; // 签名
 }

@@ -2,7 +2,7 @@ PROJECTS=base auth cms file order pay product sms user
 PROTO_DIR=./proto
 DOC_DIR=./docs
 
-all: build-go protodoc-html
+all: build-go build-php protodoc-html
 
 #生成proto文件的markdown接口定义文档
 protodoc-markdown:
