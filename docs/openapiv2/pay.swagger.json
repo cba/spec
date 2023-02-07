@@ -1,0 +1,123 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "pay.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "pay"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "baseEmpty": {
+      "type": "object",
+      "title": "空返回"
+    },
+    "baseMap": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "数据"
+        }
+      },
+      "title": "Map 通用"
+    },
+    "payGenResp": {
+      "type": "object",
+      "properties": {
+        "paymentNo": {
+          "type": "string",
+          "title": "支付单号"
+        },
+        "orderNo": {
+          "type": "string",
+          "title": "订单号"
+        },
+        "payType": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/paypayType"
+          },
+          "title": "支持的支付方式列表"
+        }
+      },
+      "title": "生成支付单返回值"
+    },
+    "paypayType": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uint64",
+          "title": "数据ID"
+        },
+        "name": {
+          "type": "string",
+          "title": "名称"
+        },
+        "tag": {
+          "type": "string",
+          "title": "标识"
+        },
+        "icon": {
+          "type": "string",
+          "title": "图标"
+        },
+        "sort": {
+          "type": "string",
+          "format": "uint64",
+          "title": "排序"
+        },
+        "remarks": {
+          "type": "string",
+          "title": "备注"
+        },
+        "status": {
+          "type": "string",
+          "format": "uint64",
+          "title": "状态"
+        }
+      },
+      "title": "支付方式"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "order.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "order"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "baseEmpty": {
+      "type": "object",
+      "title": "空返回"
+    },
+    "orderAppItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64",
+          "title": "数据ID,创建时传0"
+        },
+        "identity": {
+          "type": "string",
+          "title": "权限标识"
+        },
+        "name": {
+          "type": "string",
+          "title": "APP名"
+        },
+        "key": {
+          "type": "string",
+          "title": "AppKey"
+        },
+        "remark": {
+          "type": "string",
+          "title": "备注"
+        },
+        "status": {
+          "type": "string",
+          "format": "int64",
+          "title": "状态"
+        },
+        "createdAt": {
+          "type": "string",
+          "title": "创建时间"
+        },
+        "updatedAt": {
+          "type": "string",
+          "title": "更新时间"
+        }
+      },
+      "title": "APP详情"
+    },
+    "orderAppListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/orderAppItem"
+          },
+          "title": "列表"
+        },
+        "total": {
+          "type": "string",
+          "format": "int64",
+          "title": "总数"
+        }
+      },
+      "title": "APP列表"
+    },
+    "orderAppResetResp": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "title": "AppKey"
+        },
+        "secret": {
+          "type": "string",
+          "title": "AppSecret"
+        }
+      },
+      "title": "APP重置返回"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,462 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "product.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Product"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "baseEmpty": {
+      "type": "object",
+      "title": "空返回"
+    },
+    "productAttrItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64",
+          "title": "数据ID,创建时传0"
+        },
+        "name": {
+          "type": "string",
+          "title": "属性名"
+        },
+        "desc": {
+          "type": "string",
+          "title": "属性描述"
+        },
+        "key": {
+          "type": "string",
+          "title": "AttrKey"
+        },
+        "isImportant": {
+          "type": "boolean",
+          "title": "是否重要属性 0否 1是"
+        },
+        "isRequired": {
+          "type": "boolean",
+          "title": "是否必填 0否 1是"
+        },
+        "isCustom": {
+          "type": "boolean",
+          "title": "是否自定义添加 0否 1是"
+        },
+        "formType": {
+          "type": "string",
+          "title": "form类型 input, select, checkbox"
+        },
+        "formOptional": {
+          "type": "string",
+          "title": "form类型 input时，默认值，select, checkbox时,可选范围项"
+        },
+        "customLabel": {
+          "type": "string",
+          "title": "自定义标签"
+        },
+        "sort": {
+          "type": "string",
+          "format": "int64",
+          "title": "排序"
+        },
+        "status": {
+          "type": "string",
+          "format": "int64",
+          "title": "状态"
+        }
+      },
+      "title": "Attr详情"
+    },
+    "productAttrListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productAttrItem"
+          },
+          "title": "列表"
+        },
+        "total": {
+          "type": "string",
+          "format": "int64",
+          "title": "总数"
+        }
+      },
+      "title": "Attr列表"
+    },
+    "productCategoryItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64",
+          "title": "数据ID,创建时传0"
+        },
+        "pid": {
+          "type": "string",
+          "format": "int64",
+          "title": "父ID"
+        },
+        "name": {
+          "type": "string",
+          "title": "分类名称"
+        },
+        "desc": {
+          "type": "string",
+          "title": "分类描述"
+        },
+        "picUrl": {
+          "type": "string",
+          "title": "分类图片"
+        },
+        "sort": {
+          "type": "string",
+          "format": "int64",
+          "title": "排序"
+        },
+        "customLabel": {
+          "type": "string",
+          "title": "自定义标签"
+        },
+        "isLeaf": {
+          "type": "string",
+          "format": "int64",
+          "title": "是否为叶子分类"
+        },
+        "status": {
+          "type": "string",
+          "format": "int64",
+          "title": "状态 1:enable, 0:disable"
+        }
+      },
+      "title": "Category 详情"
+    },
+    "productCategoryListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productCategoryItem"
+          },
+          "title": "列表"
+        },
+        "total": {
+          "type": "string",
+          "format": "int64",
+          "title": "总数"
+        }
+      },
+      "title": "Category 列表"
+    },
+    "productGroupItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64",
+          "title": "数据ID,创建时传0"
+        },
+        "groupType": {
+          "type": "string",
+          "title": "分组类型 base基础属性, sale销售属性, categ类别属性"
+        },
+        "name": {
+          "type": "string",
+          "title": "分组名称"
+        },
+        "desc": {
+          "type": "string",
+          "title": "分组描述"
+        },
+        "customLabel": {
+          "type": "string",
+          "title": "自定义标签"
+        },
+        "sort": {
+          "type": "string",
+          "format": "int64",
+          "title": "排序"
+        },
+        "status": {
+          "type": "string",
+          "format": "int64",
+          "title": "状态"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productAttrItem"
+          },
+          "title": "属性列表"
+        }
+      },
+      "title": "Group 详情"
+    },
+    "productGroupListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productGroupItem"
+          },
+          "title": "列表"
+        },
+        "total": {
+          "type": "string",
+          "format": "int64",
+          "title": "总数"
+        }
+      },
+      "title": "Group 列表"
+    },
+    "productProductAttr": {
+      "type": "object",
+      "properties": {
+        "attrId": {
+          "type": "string",
+          "format": "int64",
+          "title": "属性ID"
+        },
+        "value": {
+          "type": "string",
+          "title": "属性值"
+        }
+      }
+    },
+    "productProductAttrGroup": {
+      "type": "object",
+      "properties": {
+        "groupId": {
+          "type": "string",
+          "format": "int64",
+          "title": "分组ID"
+        },
+        "groupName": {
+          "type": "string",
+          "title": "分组名称"
+        },
+        "attrs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productProductAttr"
+          },
+          "title": "销售属性"
+        }
+      }
+    },
+    "productProductItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64",
+          "title": "数据ID,创建时传0"
+        },
+        "categoryId": {
+          "type": "string",
+          "format": "int64",
+          "title": "分类ID"
+        },
+        "name": {
+          "type": "string",
+          "title": "商品名称"
+        },
+        "inStock": {
+          "type": "string",
+          "format": "int64",
+          "title": "库存"
+        },
+        "sales": {
+          "type": "string",
+          "format": "int64",
+          "title": "已售数量"
+        },
+        "coverUrl": {
+          "type": "string",
+          "title": "封面图"
+        },
+        "videoUrl": {
+          "type": "string",
+          "title": "介绍视频"
+        },
+        "isRecommend": {
+          "type": "boolean",
+          "title": "是否推荐"
+        },
+        "priceFee": {
+          "type": "string",
+          "format": "int64",
+          "title": "售价，整数方式保存"
+        },
+        "marketPriceFee": {
+          "type": "string",
+          "format": "int64",
+          "title": "市场价，整数方式保存"
+        },
+        "customLabel": {
+          "type": "string",
+          "format": "int64",
+          "title": "自定义标签"
+        },
+        "contentType": {
+          "type": "string",
+          "title": "详情类型 容类型:html json"
+        },
+        "content": {
+          "type": "string",
+          "title": "详情"
+        },
+        "cateAttrs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productProductAttr"
+          },
+          "title": "类目属性"
+        },
+        "saleGroup": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productProductAttrGroup"
+          },
+          "title": "销售属性"
+        },
+        "sku": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productProductSku"
+          },
+          "title": "销售规格"
+        },
+        "sort": {
+          "type": "string",
+          "format": "int64",
+          "title": "排序"
+        },
+        "status": {
+          "type": "string",
+          "format": "int64",
+          "title": "状态 1:enable, 0:disable"
+        }
+      },
+      "title": "Product 详情"
+    },
+    "productProductListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productProductItem"
+          },
+          "title": "列表"
+        },
+        "total": {
+          "type": "string",
+          "format": "int64",
+          "title": "总数"
+        }
+      },
+      "title": "Product 列表"
+    },
+    "productProductSku": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64",
+          "title": "数据ID,创建时传0"
+        },
+        "specNo": {
+          "type": "string",
+          "title": "attrs md5后的字符串"
+        },
+        "attrs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productProductAttr"
+          },
+          "title": "销售属性值{attr_id}:{attr_value},{attr_id}:{attr_value} 多个销售属性值逗号分隔"
+        },
+        "coverUrl": {
+          "type": "string",
+          "title": "商品介绍主图 多个图片逗号分隔"
+        },
+        "inStock": {
+          "type": "string",
+          "format": "int64",
+          "title": "库存"
+        },
+        "sales": {
+          "type": "string",
+          "format": "int64",
+          "title": "销量"
+        },
+        "customLabel": {
+          "type": "string",
+          "title": "自定义标签"
+        },
+        "priceFee": {
+          "type": "string",
+          "format": "int64",
+          "title": "售价，整数方式保存"
+        },
+        "consignPrice": {
+          "type": "string",
+          "format": "int64",
+          "title": "市场价，整数方式保存"
+        },
+        "marketPriceFee": {
+          "type": "string",
+          "format": "int64",
+          "title": "成本价，整数方式保存"
+        },
+        "status": {
+          "type": "string",
+          "format": "int64",
+          "title": "状态 1:enable, 0:disable"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}
